@@ -1,0 +1,735 @@
+[
+  {
+    "id": "hiranandani-krisala-everland",
+    "name": "Hiranandani Krisala Everland",
+    "slug": "hiranandani-krisala-everland-hinjawadi",
+    "tagline": "Branded luxury living at Pune's IT hub — by two iconic names",
+    "builder": {
+      "name": "Hiranandani x Krisala",
+      "slug": "hiranandani-krisala",
+      "parentBuilders": ["Hiranandani Communities", "Krisala Developers"]
+    },
+    "locality": "Hinjawadi",
+    "microMarket": "West Pune",
+    "address": "Hinjawadi Phase 1, Pune – 411057",
+    "coordinates": { "lat": 18.5912, "lng": 73.7389 },
+    "reraId": "P52100081234",
+    "reraUrl": "https://maharera.mahaonline.gov.in",
+    "status": "new_launch",
+    "launchDate": "2024-09",
+    "possessionDate": "2027-12",
+    "projectType": "Residential Apartments",
+
+    "configs": [
+      {
+        "type": "1BHK",
+        "carpetSqft": 395,
+        "builtUpSqft": 510,
+        "priceMin": 5500000,
+        "priceMax": 6200000,
+        "pricePerSqft": 13924,
+        "unitsTotal": 180,
+        "unitsAvailable": 112,
+        "floors": "4th–18th"
+      },
+      {
+        "type": "2BHK",
+        "carpetSqft": 640,
+        "builtUpSqft": 810,
+        "priceMin": 6800000,
+        "priceMax": 8000000,
+        "pricePerSqft": 12500,
+        "unitsTotal": 320,
+        "unitsAvailable": 198,
+        "floors": "4th–28th"
+      }
+    ],
+
+    "totalUnits": 500,
+    "unitsSold": 190,
+    "towers": 4,
+    "floors": 28,
+    "totalArea": "5.2 acres",
+
+    "priceRange": { "min": 5500000, "max": 8000000, "displayMin": "55L", "displayMax": "80L" },
+
+    "amenities": [
+      "clubhouse", "swimming_pool", "gym", "children_play_area",
+      "jogging_track", "yoga_deck", "co_working_space", "ev_charging",
+      "power_backup_100pct", "visitor_parking", "cctv_surveillance",
+      "intercom", "rainwater_harvesting", "solar_panels", "amphitheatre"
+    ],
+
+    "nearbyIT": [
+      { "name": "Hinjawadi IT Park Phase 1", "distanceKm": 0.8, "commuteMin": 5 },
+      { "name": "Hinjawadi IT Park Phase 2", "distanceKm": 2.1, "commuteMin": 10 },
+      { "name": "Rajiv Gandhi Infotech Park", "distanceKm": 1.5, "commuteMin": 8 },
+      { "name": "Infosys Campus", "distanceKm": 2.4, "commuteMin": 12 }
+    ],
+
+    "nearbyPlaces": [
+      { "name": "Xion Mall", "type": "mall", "distanceKm": 1.2 },
+      { "name": "Ryan International School", "type": "school", "distanceKm": 2.0 },
+      { "name": "Lifepoint Hospital", "type": "hospital", "distanceKm": 3.1 },
+      { "name": "Wakad Bridge", "type": "landmark", "distanceKm": 4.5 }
+    ],
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 7200 },
+      { "date": "2022-07", "pricePerSqft": 7800 },
+      { "date": "2023-01", "pricePerSqft": 8400 },
+      { "date": "2023-07", "pricePerSqft": 9200 },
+      { "date": "2024-01", "pricePerSqft": 10500 },
+      { "date": "2024-07", "pricePerSqft": 12000 },
+      { "date": "2025-01", "pricePerSqft": 13924 }
+    ],
+    "appreciation3yr": 93.4,
+
+    "localityAvgPricePerSqft": 12800,
+    "vsLocalityAvg": "+8.8%",
+
+    "approvedBanks": ["SBI", "HDFC", "ICICI", "Axis Bank", "Kotak Mahindra", "Bank of Baroda"],
+
+    "sampleEmi": {
+      "loanAmount": 5600000,
+      "downPayment": 1400000,
+      "tenure": 20,
+      "interestRate": 8.5,
+      "monthlyEmi": 48736
+    },
+
+    "highlights": [
+      "Joint venture by two of India's most trusted builders",
+      "Walking distance from Hinjawadi Phase 1 IT Park",
+      "RERA registered — possession December 2027",
+      "100% power backup and EV charging in all towers"
+    ],
+
+    "tags": ["new_launch", "it_hub", "branded_developer", "affordable", "1bhk_available"],
+    "featured": true,
+    "showflatAvailable": true,
+    "siteVisitAvailable": true,
+
+    "images": [
+      "/images/projects/hiranandani-krisala-everland/hero.jpg",
+      "/images/projects/hiranandani-krisala-everland/amenities.jpg",
+      "/images/projects/hiranandani-krisala-everland/floorplan-2bhk.jpg"
+    ],
+    "floorPlans": [
+      { "type": "1BHK", "image": "/images/projects/hiranandani-krisala-everland/plan-1bhk.jpg" },
+      { "type": "2BHK", "image": "/images/projects/hiranandani-krisala-everland/plan-2bhk.jpg" }
+    ],
+
+    "seoDescription": "Hiranandani Krisala Everland in Hinjawadi Phase 1 offers 1 and 2 BHK apartments starting ₹55 lakhs. A joint venture by Hiranandani Communities and Krisala Developers — RERA registered, possession December 2027. Zero brokerage site visits available through ShowFlat.in."
+  },
+
+  {
+    "id": "kolte-patil-springshire",
+    "name": "Kolte Patil Springshire",
+    "slug": "kolte-patil-springshire-wagholi",
+    "tagline": "Spacious homes in Pune's fastest-growing eastern corridor",
+    "builder": {
+      "name": "Kolte Patil Developers",
+      "slug": "kolte-patil-developers"
+    },
+    "locality": "Wagholi",
+    "microMarket": "East Pune",
+    "address": "Wagholi, Pune – 412207",
+    "coordinates": { "lat": 18.5590, "lng": 73.9800 },
+    "reraId": "P52100079456",
+    "reraUrl": "https://maharera.mahaonline.gov.in",
+    "status": "new_launch",
+    "launchDate": "2024-06",
+    "possessionDate": "2027-09",
+    "projectType": "Residential Apartments",
+
+    "configs": [
+      {
+        "type": "2BHK",
+        "carpetSqft": 680,
+        "builtUpSqft": 875,
+        "priceMin": 6800000,
+        "priceMax": 7800000,
+        "pricePerSqft": 10000,
+        "unitsTotal": 240,
+        "unitsAvailable": 155,
+        "floors": "3rd–20th"
+      },
+      {
+        "type": "3BHK",
+        "carpetSqft": 960,
+        "builtUpSqft": 1220,
+        "priceMin": 8200000,
+        "priceMax": 9000000,
+        "pricePerSqft": 10000,
+        "unitsTotal": 160,
+        "unitsAvailable": 98,
+        "floors": "5th–20th"
+      }
+    ],
+
+    "totalUnits": 400,
+    "unitsSold": 147,
+    "towers": 3,
+    "floors": 20,
+    "totalArea": "4.8 acres",
+
+    "priceRange": { "min": 6800000, "max": 9000000, "displayMin": "68L", "displayMax": "90L" },
+
+    "amenities": [
+      "clubhouse", "swimming_pool", "gym", "children_play_area",
+      "badminton_court", "indoor_games", "senior_citizen_area",
+      "power_backup_100pct", "covered_parking", "cctv_surveillance",
+      "landscape_garden", "meditation_zone", "cycle_track"
+    ],
+
+    "nearbyIT": [
+      { "name": "EON IT Park Kharadi", "distanceKm": 6.2, "commuteMin": 20 },
+      { "name": "World Trade Center Kharadi", "distanceKm": 7.0, "commuteMin": 22 },
+      { "name": "Magarpatta Cybercity", "distanceKm": 9.5, "commuteMin": 28 },
+      { "name": "Nagar Road IT Corridor", "distanceKm": 5.0, "commuteMin": 18 }
+    ],
+
+    "nearbyPlaces": [
+      { "name": "Wagholi Market", "type": "market", "distanceKm": 1.0 },
+      { "name": "Orchid School", "type": "school", "distanceKm": 1.8 },
+      { "name": "Noble Hospital", "type": "hospital", "distanceKm": 4.2 },
+      { "name": "Nagar Road", "type": "landmark", "distanceKm": 2.5 }
+    ],
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 5800 },
+      { "date": "2022-07", "pricePerSqft": 6200 },
+      { "date": "2023-01", "pricePerSqft": 6900 },
+      { "date": "2023-07", "pricePerSqft": 7600 },
+      { "date": "2024-01", "pricePerSqft": 8500 },
+      { "date": "2024-07", "pricePerSqft": 9200 },
+      { "date": "2025-01", "pricePerSqft": 10000 }
+    ],
+    "appreciation3yr": 72.4,
+
+    "localityAvgPricePerSqft": 9200,
+    "vsLocalityAvg": "+8.7%",
+
+    "approvedBanks": ["SBI", "HDFC", "ICICI", "Axis Bank", "LIC Housing Finance"],
+
+    "sampleEmi": {
+      "loanAmount": 6120000,
+      "downPayment": 1700000,
+      "tenure": 20,
+      "interestRate": 8.5,
+      "monthlyEmi": 53254
+    },
+
+    "highlights": [
+      "Kolte Patil — 30+ years of trusted Pune delivery record",
+      "Spacious 2 and 3 BHK with large carpet areas",
+      "Close to Nagar Road and Kharadi IT corridor",
+      "Possession September 2027"
+    ],
+
+    "tags": ["new_launch", "east_pune", "kolte_patil", "spacious", "3bhk_value"],
+    "featured": true,
+    "showflatAvailable": true,
+    "siteVisitAvailable": true,
+
+    "images": [
+      "/images/projects/kolte-patil-springshire/hero.jpg"
+    ],
+    "floorPlans": [
+      { "type": "2BHK", "image": "/images/projects/kolte-patil-springshire/plan-2bhk.jpg" },
+      { "type": "3BHK", "image": "/images/projects/kolte-patil-springshire/plan-3bhk.jpg" }
+    ],
+
+    "seoDescription": "Kolte Patil Springshire in Wagholi, Pune offers 2 and 3 BHK apartments from ₹68 lakhs. RERA registered project by one of Pune's most trusted developers. Near Kharadi IT hub. Book a free site visit through ShowFlat.in — zero brokerage."
+  },
+
+  {
+    "id": "godrej-elaris",
+    "name": "Godrej Elaris",
+    "slug": "godrej-elaris-manjari",
+    "tagline": "Godrej quality in Pune's emerging eastern jewel — Manjari",
+    "builder": {
+      "name": "Godrej Properties",
+      "slug": "godrej-properties"
+    },
+    "locality": "Manjari",
+    "microMarket": "East Pune",
+    "address": "Manjari Budruk, Pune – 412307",
+    "coordinates": { "lat": 18.5010, "lng": 73.9728 },
+    "reraId": "P52100082341",
+    "reraUrl": "https://maharera.mahaonline.gov.in",
+    "status": "new_launch",
+    "launchDate": "2024-08",
+    "possessionDate": "2028-03",
+    "projectType": "Residential Apartments",
+
+    "configs": [
+      {
+        "type": "2BHK",
+        "carpetSqft": 710,
+        "builtUpSqft": 920,
+        "priceMin": 6500000,
+        "priceMax": 8500000,
+        "pricePerSqft": 11267,
+        "unitsTotal": 280,
+        "unitsAvailable": 168,
+        "floors": "4th–24th"
+      },
+      {
+        "type": "3BHK",
+        "carpetSqft": 1020,
+        "builtUpSqft": 1320,
+        "priceMin": 9500000,
+        "priceMax": 12000000,
+        "pricePerSqft": 11764,
+        "unitsTotal": 200,
+        "unitsAvailable": 134,
+        "floors": "6th–24th"
+      }
+    ],
+
+    "totalUnits": 480,
+    "unitsSold": 178,
+    "towers": 4,
+    "floors": 24,
+    "totalArea": "5.8 acres",
+
+    "priceRange": { "min": 6500000, "max": 12000000, "displayMin": "65L", "displayMax": "1.2Cr" },
+
+    "amenities": [
+      "clubhouse", "swimming_pool", "gym", "children_play_area",
+      "tennis_court", "badminton_court", "jogging_track", "amphitheatre",
+      "co_working_space", "ev_charging", "power_backup_100pct",
+      "cctv_surveillance", "smart_home_features", "rainwater_harvesting",
+      "solar_panels", "landscape_garden", "retail_shops_ground"
+    ],
+
+    "nearbyIT": [
+      { "name": "EON IT Park Kharadi", "distanceKm": 4.5, "commuteMin": 15 },
+      { "name": "Magarpatta Cybercity", "distanceKm": 5.2, "commuteMin": 18 },
+      { "name": "World Trade Center Kharadi", "distanceKm": 5.0, "commuteMin": 16 },
+      { "name": "Hadapsar IT Hub", "distanceKm": 6.8, "commuteMin": 22 }
+    ],
+
+    "nearbyPlaces": [
+      { "name": "Amanora Park Town", "type": "township", "distanceKm": 3.5 },
+      { "name": "Symbiosis International University", "type": "university", "distanceKm": 4.0 },
+      { "name": "Columbia Asia Hospital", "type": "hospital", "distanceKm": 5.2 },
+      { "name": "Seasons Mall Hadapsar", "type": "mall", "distanceKm": 6.0 }
+    ],
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 6200 },
+      { "date": "2022-07", "pricePerSqft": 6800 },
+      { "date": "2023-01", "pricePerSqft": 7500 },
+      { "date": "2023-07", "pricePerSqft": 8400 },
+      { "date": "2024-01", "pricePerSqft": 9800 },
+      { "date": "2024-07", "pricePerSqft": 10900 },
+      { "date": "2025-01", "pricePerSqft": 11500 }
+    ],
+    "appreciation3yr": 85.5,
+
+    "localityAvgPricePerSqft": 9800,
+    "vsLocalityAvg": "+17.3%",
+
+    "approvedBanks": ["SBI", "HDFC", "ICICI", "Axis Bank", "Kotak Mahindra", "PNB Housing"],
+
+    "sampleEmi": {
+      "loanAmount": 7200000,
+      "downPayment": 1800000,
+      "tenure": 20,
+      "interestRate": 8.5,
+      "monthlyEmi": 62652
+    },
+
+    "highlights": [
+      "Godrej Properties — India's most trusted real estate brand",
+      "Smart home features standard across all units",
+      "Close to Magarpatta and Kharadi IT corridor",
+      "Largest carpet areas in this price bracket in East Pune"
+    ],
+
+    "tags": ["new_launch", "east_pune", "godrej", "premium", "smart_home", "large_carpet"],
+    "featured": true,
+    "showflatAvailable": true,
+    "siteVisitAvailable": true,
+
+    "images": [
+      "/images/projects/godrej-elaris/hero.jpg"
+    ],
+    "floorPlans": [
+      { "type": "2BHK", "image": "/images/projects/godrej-elaris/plan-2bhk.jpg" },
+      { "type": "3BHK", "image": "/images/projects/godrej-elaris/plan-3bhk.jpg" }
+    ],
+
+    "seoDescription": "Godrej Elaris in Manjari, Pune offers 2 and 3 BHK premium apartments from ₹65 lakhs. Smart home features, 17 amenities, RERA registered. 15 min from Kharadi IT Park. Book a free zero-brokerage site visit through ShowFlat.in."
+  },
+
+  {
+    "id": "saheel-landmarc",
+    "name": "Saheel Landmarc",
+    "slug": "saheel-landmarc-hinjawadi",
+    "tagline": "Value and lifestyle at the heart of Hinjawadi's tech corridor",
+    "builder": {
+      "name": "Saheel Properties",
+      "slug": "saheel-properties"
+    },
+    "locality": "Hinjawadi",
+    "microMarket": "West Pune",
+    "address": "Hinjawadi Phase 2, Pune – 411057",
+    "coordinates": { "lat": 18.5978, "lng": 73.7201 },
+    "reraId": "P52100076891",
+    "reraUrl": "https://maharera.mahaonline.gov.in",
+    "status": "new_launch",
+    "launchDate": "2024-04",
+    "possessionDate": "2027-06",
+    "projectType": "Residential Apartments",
+
+    "configs": [
+      {
+        "type": "2BHK",
+        "carpetSqft": 650,
+        "builtUpSqft": 840,
+        "priceMin": 6800000,
+        "priceMax": 8000000,
+        "pricePerSqft": 10461,
+        "unitsTotal": 200,
+        "unitsAvailable": 118,
+        "floors": "3rd–18th"
+      },
+      {
+        "type": "3BHK",
+        "carpetSqft": 920,
+        "builtUpSqft": 1180,
+        "priceMin": 8500000,
+        "priceMax": 9500000,
+        "pricePerSqft": 10326,
+        "unitsTotal": 120,
+        "unitsAvailable": 76,
+        "floors": "5th–18th"
+      }
+    ],
+
+    "totalUnits": 320,
+    "unitsSold": 126,
+    "towers": 3,
+    "floors": 18,
+    "totalArea": "3.9 acres",
+
+    "priceRange": { "min": 6800000, "max": 9500000, "displayMin": "68L", "displayMax": "95L" },
+
+    "amenities": [
+      "clubhouse", "swimming_pool", "gym", "children_play_area",
+      "jogging_track", "party_lawn", "power_backup_100pct",
+      "covered_parking", "cctv_surveillance", "intercom",
+      "rainwater_harvesting", "landscape_garden"
+    ],
+
+    "nearbyIT": [
+      { "name": "Hinjawadi Phase 2 IT Park", "distanceKm": 0.5, "commuteMin": 4 },
+      { "name": "Rajiv Gandhi Infotech Park", "distanceKm": 2.0, "commuteMin": 10 },
+      { "name": "Hinjawadi Phase 3 (TCS, Wipro)", "distanceKm": 3.5, "commuteMin": 15 },
+      { "name": "Infosys BPO", "distanceKm": 1.8, "commuteMin": 9 }
+    ],
+
+    "nearbyPlaces": [
+      { "name": "Westend Mall", "type": "mall", "distanceKm": 5.0 },
+      { "name": "Cambridge International School", "type": "school", "distanceKm": 1.5 },
+      { "name": "Jupiter Hospital", "type": "hospital", "distanceKm": 6.5 },
+      { "name": "Wakad", "type": "neighbourhood", "distanceKm": 4.0 }
+    ],
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 6800 },
+      { "date": "2022-07", "pricePerSqft": 7400 },
+      { "date": "2023-01", "pricePerSqft": 8000 },
+      { "date": "2023-07", "pricePerSqft": 8900 },
+      { "date": "2024-01", "pricePerSqft": 9700 },
+      { "date": "2024-07", "pricePerSqft": 10200 },
+      { "date": "2025-01", "pricePerSqft": 10461 }
+    ],
+    "appreciation3yr": 53.8,
+
+    "localityAvgPricePerSqft": 12800,
+    "vsLocalityAvg": "-18.3%",
+
+    "approvedBanks": ["SBI", "HDFC", "ICICI", "Axis Bank"],
+
+    "sampleEmi": {
+      "loanAmount": 6800000,
+      "downPayment": 1700000,
+      "tenure": 20,
+      "interestRate": 8.5,
+      "monthlyEmi": 59131
+    },
+
+    "highlights": [
+      "Best value per sqft in Hinjawadi Phase 2",
+      "Literally 500m from Phase 2 IT Park gate",
+      "Earlier possession — June 2027",
+      "Saheel Properties — 20 years of Pune delivery track record"
+    ],
+
+    "tags": ["new_launch", "hinjawadi", "value_for_money", "it_hub", "early_possession"],
+    "featured": true,
+    "showflatAvailable": true,
+    "siteVisitAvailable": true,
+
+    "images": [
+      "/images/projects/saheel-landmarc/hero.jpg"
+    ],
+    "floorPlans": [
+      { "type": "2BHK", "image": "/images/projects/saheel-landmarc/plan-2bhk.jpg" },
+      { "type": "3BHK", "image": "/images/projects/saheel-landmarc/plan-3bhk.jpg" }
+    ],
+
+    "seoDescription": "Saheel Landmarc in Hinjawadi Phase 2, Pune offers 2 and 3 BHK apartments from ₹68 lakhs. Closest residential project to Hinjawadi Phase 2 IT Park — possession June 2027. Book a zero-brokerage site visit through ShowFlat.in."
+  },
+
+  {
+    "id": "yashada-earthsong",
+    "name": "Yashada Earthsong",
+    "slug": "yashada-earthsong-ravet",
+    "tagline": "Green living meets IT convenience — the new address of Ravet",
+    "builder": {
+      "name": "Yashada Developers",
+      "slug": "yashada-developers"
+    },
+    "locality": "Ravet",
+    "microMarket": "West Pune",
+    "address": "Ravet, Pimpri Chinchwad – 412101",
+    "coordinates": { "lat": 18.6510, "lng": 73.7450 },
+    "reraId": "P52700071234",
+    "reraUrl": "https://maharera.mahaonline.gov.in",
+    "status": "new_launch",
+    "launchDate": "2024-03",
+    "possessionDate": "2027-03",
+    "projectType": "Residential Apartments",
+
+    "configs": [
+      {
+        "type": "2BHK",
+        "carpetSqft": 620,
+        "builtUpSqft": 800,
+        "priceMin": 5500000,
+        "priceMax": 7000000,
+        "pricePerSqft": 8870,
+        "unitsTotal": 220,
+        "unitsAvailable": 140,
+        "floors": "2nd–16th"
+      },
+      {
+        "type": "3BHK",
+        "carpetSqft": 890,
+        "builtUpSqft": 1140,
+        "priceMin": 7200000,
+        "priceMax": 8500000,
+        "pricePerSqft": 8988,
+        "unitsTotal": 130,
+        "unitsAvailable": 88,
+        "floors": "4th–16th"
+      }
+    ],
+
+    "totalUnits": 350,
+    "unitsSold": 122,
+    "towers": 3,
+    "floors": 16,
+    "totalArea": "4.2 acres",
+
+    "priceRange": { "min": 5500000, "max": 8500000, "displayMin": "55L", "displayMax": "85L" },
+
+    "amenities": [
+      "clubhouse", "swimming_pool", "gym", "children_play_area",
+      "jogging_track", "organic_garden", "rainwater_harvesting",
+      "solar_panels", "power_backup_100pct", "ev_charging",
+      "cctv_surveillance", "covered_parking", "landscape_garden",
+      "rooftop_lounge"
+    ],
+
+    "nearbyIT": [
+      { "name": "Hinjawadi IT Park Phase 1", "distanceKm": 5.5, "commuteMin": 18 },
+      { "name": "Hinjawadi Phase 3", "distanceKm": 6.0, "commuteMin": 20 },
+      { "name": "PCMC IT Corridor", "distanceKm": 3.0, "commuteMin": 12 },
+      { "name": "Wakad Business District", "distanceKm": 7.0, "commuteMin": 22 }
+    ],
+
+    "nearbyPlaces": [
+      { "name": "D-Mart Ravet", "type": "supermarket", "distanceKm": 0.8 },
+      { "name": "Indira National School", "type": "school", "distanceKm": 1.2 },
+      { "name": "Aditya Birla Hospital", "type": "hospital", "distanceKm": 4.5 },
+      { "name": "Spine Road", "type": "highway", "distanceKm": 1.0 }
+    ],
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 5200 },
+      { "date": "2022-07", "pricePerSqft": 5700 },
+      { "date": "2023-01", "pricePerSqft": 6300 },
+      { "date": "2023-07", "pricePerSqft": 7000 },
+      { "date": "2024-01", "pricePerSqft": 7800 },
+      { "date": "2024-07", "pricePerSqft": 8400 },
+      { "date": "2025-01", "pricePerSqft": 8870 }
+    ],
+    "appreciation3yr": 70.6,
+
+    "localityAvgPricePerSqft": 8200,
+    "vsLocalityAvg": "+8.2%",
+
+    "approvedBanks": ["SBI", "HDFC", "ICICI", "Bank of Baroda", "LIC Housing Finance"],
+
+    "sampleEmi": {
+      "loanAmount": 5600000,
+      "downPayment": 1400000,
+      "tenure": 20,
+      "interestRate": 8.5,
+      "monthlyEmi": 48736
+    },
+
+    "highlights": [
+      "Most affordable new launch near Hinjawadi in 2024",
+      "Organic garden and rooftop lounge — rare for this price",
+      "Ravet's improving infrastructure — Spine Road connectivity",
+      "Earliest possession — March 2027"
+    ],
+
+    "tags": ["new_launch", "ravet", "affordable", "green_living", "early_possession", "pcmc"],
+    "featured": true,
+    "showflatAvailable": true,
+    "siteVisitAvailable": true,
+
+    "images": [
+      "/images/projects/yashada-earthsong/hero.jpg"
+    ],
+    "floorPlans": [
+      { "type": "2BHK", "image": "/images/projects/yashada-earthsong/plan-2bhk.jpg" },
+      { "type": "3BHK", "image": "/images/projects/yashada-earthsong/plan-3bhk.jpg" }
+    ],
+
+    "seoDescription": "Yashada Earthsong in Ravet, Pimpri Chinchwad offers 2 and 3 BHK eco-friendly apartments from ₹55 lakhs. Green features, organic garden, rooftop lounge. Possession March 2027 — earliest in West Pune. Zero brokerage site visit via ShowFlat.in."
+  },
+
+  {
+    "id": "krisala-aventis",
+    "name": "Krisala Aventis",
+    "slug": "krisala-aventis-tathawade",
+    "tagline": "Premium 2.25 and 3.25 BHK — the extra room that changes everything",
+    "builder": {
+      "name": "Krisala Developers",
+      "slug": "krisala-developers"
+    },
+    "locality": "Tathawade",
+    "microMarket": "West Pune",
+    "address": "Tathawade, Pune – 411033",
+    "coordinates": { "lat": 18.6120, "lng": 73.7650 },
+    "reraId": "P52100078923",
+    "reraUrl": "https://maharera.mahaonline.gov.in",
+    "status": "new_launch",
+    "launchDate": "2024-07",
+    "possessionDate": "2027-12",
+    "projectType": "Residential Apartments",
+
+    "configs": [
+      {
+        "type": "2.25 BHK",
+        "carpetSqft": 780,
+        "builtUpSqft": 1000,
+        "priceMin": 9700000,
+        "priceMax": 10500000,
+        "pricePerSqft": 12435,
+        "unitsTotal": 160,
+        "unitsAvailable": 98,
+        "floors": "3rd–22nd",
+        "note": "Extra utility/study room included"
+      },
+      {
+        "type": "3.25 BHK",
+        "carpetSqft": 1080,
+        "builtUpSqft": 1380,
+        "priceMin": 11000000,
+        "priceMax": 11800000,
+        "pricePerSqft": 11851,
+        "unitsTotal": 100,
+        "unitsAvailable": 62,
+        "floors": "5th–22nd",
+        "note": "Extra servant/home office room included"
+      }
+    ],
+
+    "totalUnits": 260,
+    "unitsSold": 100,
+    "towers": 2,
+    "floors": 22,
+    "totalArea": "2.8 acres",
+
+    "priceRange": { "min": 9700000, "max": 11800000, "displayMin": "97L", "displayMax": "1.18Cr" },
+
+    "amenities": [
+      "clubhouse", "swimming_pool", "gym", "children_play_area",
+      "squash_court", "badminton_court", "yoga_deck", "meditation_room",
+      "co_working_space", "ev_charging", "power_backup_100pct",
+      "smart_home_features", "cctv_surveillance", "concierge",
+      "rainwater_harvesting", "solar_panels"
+    ],
+
+    "nearbyIT": [
+      { "name": "Hinjawadi IT Park (all phases)", "distanceKm": 3.0, "commuteMin": 12 },
+      { "name": "Rajiv Gandhi Infotech Park", "distanceKm": 2.5, "commuteMin": 10 },
+      { "name": "Cognizant Tech Park", "distanceKm": 2.0, "commuteMin": 8 },
+      { "name": "Persistent Systems HQ", "distanceKm": 3.5, "commuteMin": 14 }
+    ],
+
+    "nearbyPlaces": [
+      { "name": "Xion Mall", "type": "mall", "distanceKm": 3.5 },
+      { "name": "VIBGYOR School", "type": "school", "distanceKm": 1.0 },
+      { "name": "Medipoint Hospital", "type": "hospital", "distanceKm": 2.2 },
+      { "name": "Spine Road", "type": "highway", "distanceKm": 0.5 }
+    ],
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 7500 },
+      { "date": "2022-07", "pricePerSqft": 8200 },
+      { "date": "2023-01", "pricePerSqft": 9000 },
+      { "date": "2023-07", "pricePerSqft": 10000 },
+      { "date": "2024-01", "pricePerSqft": 11000 },
+      { "date": "2024-07", "pricePerSqft": 11800 },
+      { "date": "2025-01", "pricePerSqft": 12435 }
+    ],
+    "appreciation3yr": 65.8,
+
+    "localityAvgPricePerSqft": 11800,
+    "vsLocalityAvg": "+5.4%",
+
+    "approvedBanks": ["SBI", "HDFC", "ICICI", "Axis Bank", "Kotak Mahindra", "PNB Housing"],
+
+    "sampleEmi": {
+      "loanAmount": 9000000,
+      "downPayment": 2000000,
+      "tenure": 20,
+      "interestRate": 8.5,
+      "monthlyEmi": 78286
+    },
+
+    "highlights": [
+      "Unique 2.25 and 3.25 BHK — extra room for WFH or guests",
+      "Tathawade's best-connected address — 12 min to all Hinjawadi phases",
+      "Smart home features standard — app-controlled AC, lighting, security",
+      "Krisala x Hiranandani JV track record — proven delivery"
+    ],
+
+    "tags": ["new_launch", "tathawade", "krisala", "premium", "smart_home", "wfh_ready", "unique_config"],
+    "featured": true,
+    "showflatAvailable": true,
+    "siteVisitAvailable": true,
+
+    "images": [
+      "/images/projects/krisala-aventis/hero.jpg"
+    ],
+    "floorPlans": [
+      { "type": "2.25 BHK", "image": "/images/projects/krisala-aventis/plan-2.25bhk.jpg" },
+      { "type": "3.25 BHK", "image": "/images/projects/krisala-aventis/plan-3.25bhk.jpg" }
+    ],
+
+    "seoDescription": "Krisala Aventis in Tathawade, Pune offers unique 2.25 and 3.25 BHK premium apartments from ₹97 lakhs. Smart home features, 16 amenities, 12 minutes from all Hinjawadi IT parks. RERA registered. Book a zero-brokerage site visit through ShowFlat.in."
+  }
+]

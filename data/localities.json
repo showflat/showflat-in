@@ -1,0 +1,825 @@
+[
+  {
+    "slug": "hinjawadi",
+    "name": "Hinjawadi",
+    "displayName": "Hinjawadi",
+    "microMarket": "West Pune",
+    "district": "Pune",
+    "pincode": "411057",
+    "coordinates": { "lat": 18.5912, "lng": 73.7389 },
+
+    "pricing": {
+      "avgPricePerSqft": 12800,
+      "priceRangeMin": 10000,
+      "priceRangeMax": 17000,
+      "appreciation1yr": 18.5,
+      "appreciation3yr": 88.2,
+      "rentalYield": 3.2,
+      "avgRentFor2BHK": 28000
+    },
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 6800 },
+      { "date": "2022-07", "pricePerSqft": 7600 },
+      { "date": "2023-01", "pricePerSqft": 8800 },
+      { "date": "2023-07", "pricePerSqft": 10200 },
+      { "date": "2024-01", "pricePerSqft": 11500 },
+      { "date": "2024-07", "pricePerSqft": 12200 },
+      { "date": "2025-01", "pricePerSqft": 12800 }
+    ],
+
+    "topITCompanies": [
+      "Infosys", "Wipro", "TCS", "Cognizant", "Tech Mahindra",
+      "Persistent Systems", "KPIT Technologies", "Cyient"
+    ],
+
+    "upcomingInfra": [
+      { "name": "Pune Metro Line 3 (Hinjawadi–Shivajinagar)", "expectedYear": 2026, "impact": "high" },
+      { "name": "Hinjawadi Phase 4 IT Park expansion", "expectedYear": 2026, "impact": "high" },
+      { "name": "Ring Road connectivity improvement", "expectedYear": 2025, "impact": "medium" }
+    ],
+
+    "connectivity": {
+      "toPuneStation": "32 km / 55 min",
+      "toPuneAirport": "28 km / 45 min",
+      "toMumbai": "160 km / 3 hr (Expressway)",
+      "nearestMetroStation": "Hinjawadi (Phase 3, 2026)",
+      "busRoutes": ["PMPML 168", "PMPML 122", "IT Park Shuttle"]
+    },
+
+    "overview": "Hinjawadi is Pune's most prominent IT hub, home to Rajiv Gandhi Infotech Park across three phases spanning over 2,800 acres. With 300,000+ working professionals, it is the fastest-appreciating micro-market in Pune. Property prices have nearly doubled in three years, driven by demand from tech employees of Infosys, Wipro, TCS, Cognizant, and 250+ other companies. The upcoming Metro Line 3 connecting Hinjawadi to Shivajinagar will further compress commute times and is expected to add 10–15% to property values on completion in 2026.",
+
+    "investorNote": "Highest rental demand in Pune. Average 2BHK rents at ₹28,000/month. Rental yield of 3.2% p.a. Combined with 18–20% annual appreciation, total return profile is among the best in Maharashtra.",
+
+    "activeProjectCount": 12,
+    "tags": ["it_hub", "metro_upcoming", "high_appreciation", "west_pune"]
+  },
+
+  {
+    "slug": "baner",
+    "name": "Baner",
+    "displayName": "Baner",
+    "microMarket": "West Pune",
+    "district": "Pune",
+    "pincode": "411045",
+    "coordinates": { "lat": 18.5590, "lng": 73.7868 },
+
+    "pricing": {
+      "avgPricePerSqft": 14500,
+      "priceRangeMin": 11000,
+      "priceRangeMax": 22000,
+      "appreciation1yr": 14.2,
+      "appreciation3yr": 72.6,
+      "rentalYield": 2.8,
+      "avgRentFor2BHK": 32000
+    },
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 8400 },
+      { "date": "2022-07", "pricePerSqft": 9200 },
+      { "date": "2023-01", "pricePerSqft": 10500 },
+      { "date": "2023-07", "pricePerSqft": 12000 },
+      { "date": "2024-01", "pricePerSqft": 13200 },
+      { "date": "2024-07", "pricePerSqft": 14000 },
+      { "date": "2025-01", "pricePerSqft": 14500 }
+    ],
+
+    "topITCompanies": [
+      "Symantec", "Barclays Technology Centre", "HSBC GLT",
+      "Deutsche Bank", "Credit Suisse", "Synechron"
+    ],
+
+    "upcomingInfra": [
+      { "name": "Baner–Balewadi road widening", "expectedYear": 2025, "impact": "medium" },
+      { "name": "Pune Metro Line 3 (nearby Shivajinagar hub)", "expectedYear": 2026, "impact": "medium" },
+      { "name": "Baner–Pashan Link Road upgrade", "expectedYear": 2025, "impact": "low" }
+    ],
+
+    "connectivity": {
+      "toPuneStation": "18 km / 35 min",
+      "toPuneAirport": "22 km / 40 min",
+      "toMumbai": "155 km / 2.5 hr (Expressway)",
+      "nearestMetroStation": "Baner (Metro Line 3, 2026)",
+      "busRoutes": ["PMPML 158", "PMPML 99"]
+    },
+
+    "overview": "Baner is one of Pune's most aspirational residential addresses, known for its clean wide roads, upscale restaurants, premium schools, and proximity to both Hinjawadi and BFSI companies on Senapati Bapat Road. The area attracts senior IT professionals, expats, and dual-income couples looking for premium living within 30 minutes of any major office cluster. Baner commands a significant premium over Hinjawadi on a price-per-sqft basis, justified by better physical infrastructure, mature social amenities, and the cachet of the address.",
+
+    "investorNote": "Premium rental market. 2BHK rents at ₹30,000–₹36,000/month attract BFSI and senior tech employees. End-user demand is strong — lower vacancy rate than most Pune localities.",
+
+    "activeProjectCount": 8,
+    "tags": ["premium", "bfsi_hub", "upscale", "west_pune", "mature_locality"]
+  },
+
+  {
+    "slug": "kharadi",
+    "name": "Kharadi",
+    "displayName": "Kharadi",
+    "microMarket": "East Pune",
+    "district": "Pune",
+    "pincode": "411014",
+    "coordinates": { "lat": 18.5529, "lng": 73.9474 },
+
+    "pricing": {
+      "avgPricePerSqft": 11200,
+      "priceRangeMin": 9000,
+      "priceRangeMax": 16000,
+      "appreciation1yr": 16.8,
+      "appreciation3yr": 82.0,
+      "rentalYield": 3.5,
+      "avgRentFor2BHK": 25000
+    },
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 6150 },
+      { "date": "2022-07", "pricePerSqft": 6900 },
+      { "date": "2023-01", "pricePerSqft": 7800 },
+      { "date": "2023-07", "pricePerSqft": 8900 },
+      { "date": "2024-01", "pricePerSqft": 10000 },
+      { "date": "2024-07", "pricePerSqft": 10800 },
+      { "date": "2025-01", "pricePerSqft": 11200 }
+    ],
+
+    "topITCompanies": [
+      "EON IT Park tenants (IBM, Capgemini, Accenture)", "World Trade Center",
+      "Zensar Technologies", "KPIT", "Cummins India", "Emerson Electric"
+    ],
+
+    "upcomingInfra": [
+      { "name": "Kharadi–Wagholi ring road", "expectedYear": 2025, "impact": "high" },
+      { "name": "Pune Metro Line 2 extension", "expectedYear": 2027, "impact": "high" },
+      { "name": "EON IT Park Phase 2 expansion", "expectedYear": 2026, "impact": "medium" }
+    ],
+
+    "connectivity": {
+      "toPuneStation": "14 km / 30 min",
+      "toPuneAirport": "8 km / 20 min",
+      "toMumbai": "145 km / 2.5 hr (Nagar Road)",
+      "nearestMetroStation": "Ramwadi (Metro Line 2)",
+      "busRoutes": ["PMPML 154", "PMPML 118", "PMPML 45"]
+    },
+
+    "overview": "Kharadi hosts EON IT Park and the World Trade Center Pune, housing over 80,000 working professionals. It is the closest major IT node to Pune International Airport — a 20-minute drive — making it highly preferred by frequent business travellers and NRI buyers. The area has seen the fastest residential price appreciation in east Pune over the past 3 years, closing in on Baner in premium positioning. Its excellent connectivity via Nagar Road and the upcoming Metro extension makes it a strong long-term investment.",
+
+    "investorNote": "Highest rental yield in east Pune at 3.5%. Airport proximity drives NRI demand. Consistently low vacancy rates. Strong appreciation trajectory expected to continue with Metro expansion.",
+
+    "activeProjectCount": 9,
+    "tags": ["it_hub", "airport_proximity", "nri_demand", "east_pune", "high_yield"]
+  },
+
+  {
+    "slug": "wakad",
+    "name": "Wakad",
+    "displayName": "Wakad",
+    "microMarket": "West Pune",
+    "district": "Pune",
+    "pincode": "411057",
+    "coordinates": { "lat": 18.6010, "lng": 73.7700 },
+
+    "pricing": {
+      "avgPricePerSqft": 10800,
+      "priceRangeMin": 8500,
+      "priceRangeMax": 15000,
+      "appreciation1yr": 15.0,
+      "appreciation3yr": 78.5,
+      "rentalYield": 3.4,
+      "avgRentFor2BHK": 24000
+    },
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 6050 },
+      { "date": "2022-07", "pricePerSqft": 6700 },
+      { "date": "2023-01", "pricePerSqft": 7600 },
+      { "date": "2023-07", "pricePerSqft": 8700 },
+      { "date": "2024-01", "pricePerSqft": 9800 },
+      { "date": "2024-07", "pricePerSqft": 10300 },
+      { "date": "2025-01", "pricePerSqft": 10800 }
+    ],
+
+    "topITCompanies": [
+      "Hinjawadi IT Park (5km)", "Infosys BPO", "Cognizant BPO",
+      "Wipro BPO", "Capgemini BPO", "Cyient Wakad Office"
+    ],
+
+    "upcomingInfra": [
+      { "name": "Wakad–Hinjawadi Metro connector", "expectedYear": 2026, "impact": "high" },
+      { "name": "Wakad junction flyover", "expectedYear": 2025, "impact": "medium" }
+    ],
+
+    "connectivity": {
+      "toPuneStation": "20 km / 40 min",
+      "toPuneAirport": "28 km / 45 min",
+      "toMumbai": "152 km / 2.5 hr",
+      "nearestMetroStation": "Wakad (Metro Line 3, 2026)",
+      "busRoutes": ["PMPML 168", "PMPML 177"]
+    },
+
+    "overview": "Wakad sits between the premium Baner address and the IT density of Hinjawadi, offering a compelling mid-market position. It is one of the most sought-after localities for young IT professionals who want good social infrastructure (malls, restaurants, schools) without paying Baner prices. The locality has its own commercial hub with the Xion Mall and several large format retail stores. Price appreciation has been strong at ~78% over 3 years.",
+
+    "investorNote": "Best value-appreciation combination in West Pune. 3.4% yield with strong end-user demand keeps vacancy low. Metro connectivity in 2026 is expected to be a significant price catalyst.",
+
+    "activeProjectCount": 10,
+    "tags": ["mid_market", "social_infra", "west_pune", "metro_upcoming", "value"]
+  },
+
+  {
+    "slug": "wagholi",
+    "name": "Wagholi",
+    "displayName": "Wagholi",
+    "microMarket": "East Pune",
+    "district": "Pune",
+    "pincode": "412207",
+    "coordinates": { "lat": 18.5590, "lng": 73.9800 },
+
+    "pricing": {
+      "avgPricePerSqft": 9200,
+      "priceRangeMin": 7000,
+      "priceRangeMax": 12500,
+      "appreciation1yr": 13.6,
+      "appreciation3yr": 65.0,
+      "rentalYield": 3.8,
+      "avgRentFor2BHK": 18500
+    },
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 5575 },
+      { "date": "2022-07", "pricePerSqft": 6000 },
+      { "date": "2023-01", "pricePerSqft": 6800 },
+      { "date": "2023-07", "pricePerSqft": 7700 },
+      { "date": "2024-01", "pricePerSqft": 8500 },
+      { "date": "2024-07", "pricePerSqft": 8900 },
+      { "date": "2025-01", "pricePerSqft": 9200 }
+    ],
+
+    "topITCompanies": [
+      "Kharadi IT (10km)", "Nagar Road IT Corridor", "Pune IT Park",
+      "Accenture Pune", "Wipro Pune"
+    ],
+
+    "upcomingInfra": [
+      { "name": "Kharadi–Wagholi ring road", "expectedYear": 2025, "impact": "high" },
+      { "name": "Nagar Road metro extension", "expectedYear": 2027, "impact": "medium" }
+    ],
+
+    "connectivity": {
+      "toPuneStation": "18 km / 35 min",
+      "toPuneAirport": "10 km / 22 min",
+      "toMumbai": "155 km",
+      "nearestMetroStation": "Ramwadi (Metro Line 2, 4km)",
+      "busRoutes": ["PMPML 154", "PMPML 45"]
+    },
+
+    "overview": "Wagholi is East Pune's most affordable residential destination with significant upside potential. It sits on the Nagar Road corridor, midway between Kharadi IT Park and the Pune–Nagar highway. The area has seen an influx of first-time buyers and investors seeking value. Prices remain 20–25% below comparable Kharadi properties, making it attractive for budget buyers who accept a longer commute. Infrastructure improvements — particularly the Kharadi bypass ring road — are reducing that commute significantly.",
+
+    "investorNote": "Highest rental yield in east Pune at 3.8%. Ideal for investors with a 5-year horizon waiting for infrastructure catch-up. Budget buyer end-user demand remains robust.",
+
+    "activeProjectCount": 11,
+    "tags": ["affordable", "east_pune", "high_yield", "first_home", "investment"]
+  },
+
+  {
+    "slug": "tathawade",
+    "name": "Tathawade",
+    "displayName": "Tathawade",
+    "microMarket": "West Pune",
+    "district": "Pune",
+    "pincode": "411033",
+    "coordinates": { "lat": 18.6120, "lng": 73.7650 },
+
+    "pricing": {
+      "avgPricePerSqft": 11800,
+      "priceRangeMin": 9500,
+      "priceRangeMax": 15500,
+      "appreciation1yr": 16.2,
+      "appreciation3yr": 74.1,
+      "rentalYield": 3.3,
+      "avgRentFor2BHK": 26000
+    },
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 6780 },
+      { "date": "2022-07", "pricePerSqft": 7500 },
+      { "date": "2023-01", "pricePerSqft": 8400 },
+      { "date": "2023-07", "pricePerSqft": 9600 },
+      { "date": "2024-01", "pricePerSqft": 10800 },
+      { "date": "2024-07", "pricePerSqft": 11400 },
+      { "date": "2025-01", "pricePerSqft": 11800 }
+    ],
+
+    "topITCompanies": [
+      "Persistent Systems HQ", "Cognizant Tathawade", "Infosys Hinjawadi (5km)",
+      "Wipro Hinjawadi (5km)", "Cyient", "KPIT Technologies"
+    ],
+
+    "upcomingInfra": [
+      { "name": "Tathawade Metro station (Line 3)", "expectedYear": 2026, "impact": "high" },
+      { "name": "Spine Road expansion", "expectedYear": 2025, "impact": "medium" }
+    ],
+
+    "connectivity": {
+      "toPuneStation": "22 km / 42 min",
+      "toPuneAirport": "30 km / 48 min",
+      "toMumbai": "155 km / 2.5 hr",
+      "nearestMetroStation": "Tathawade (Metro Line 3, 2026)",
+      "busRoutes": ["PMPML 168", "Spine Road routes"]
+    },
+
+    "overview": "Tathawade occupies a premium position in the Hinjawadi–Wakad–Baner triangle, offering better value than Baner with near-identical IT access. It is home to Persistent Systems HQ and sits on the Spine Road — one of the widest and best-maintained roads in west Pune. The upcoming Metro Line 3 station will make it a fully connected node. New launches here tend to offer unique premium configurations targeting senior IT professionals.",
+
+    "investorNote": "Sweet spot between Wakad affordability and Baner premium. Metro connectivity in 2026 is the key upcoming catalyst. Strong rental demand from Persistent Systems and Cognizant employees.",
+
+    "activeProjectCount": 6,
+    "tags": ["premium", "persistent_hub", "metro_upcoming", "west_pune", "mid_premium"]
+  },
+
+  {
+    "slug": "ravet",
+    "name": "Ravet",
+    "displayName": "Ravet",
+    "microMarket": "West Pune / PCMC",
+    "district": "Pimpri Chinchwad",
+    "pincode": "412101",
+    "coordinates": { "lat": 18.6510, "lng": 73.7450 },
+
+    "pricing": {
+      "avgPricePerSqft": 8200,
+      "priceRangeMin": 6500,
+      "priceRangeMax": 11000,
+      "appreciation1yr": 14.0,
+      "appreciation3yr": 64.0,
+      "rentalYield": 3.6,
+      "avgRentFor2BHK": 17500
+    },
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 5000 },
+      { "date": "2022-07", "pricePerSqft": 5500 },
+      { "date": "2023-01", "pricePerSqft": 6200 },
+      { "date": "2023-07", "pricePerSqft": 7000 },
+      { "date": "2024-01", "pricePerSqft": 7600 },
+      { "date": "2024-07", "pricePerSqft": 7900 },
+      { "date": "2025-01", "pricePerSqft": 8200 }
+    ],
+
+    "topITCompanies": [
+      "Hinjawadi IT Park (6km)", "PCMC IT Corridor", "Akurdi IT Zone",
+      "Pimpri IT offices"
+    ],
+
+    "upcomingInfra": [
+      { "name": "Ravet–Hinjawadi Metro connector", "expectedYear": 2026, "impact": "high" },
+      { "name": "Spine Road Phase 2", "expectedYear": 2025, "impact": "medium" }
+    ],
+
+    "connectivity": {
+      "toPuneStation": "26 km / 50 min",
+      "toPuneAirport": "34 km / 55 min",
+      "toMumbai": "148 km / 2.5 hr",
+      "nearestMetroStation": "Ravet (Metro Line 3, 2026)",
+      "busRoutes": ["PMPML 66", "PMPML 177"]
+    },
+
+    "overview": "Ravet is the most affordable new-launch destination within commuting range of Hinjawadi, making it the go-to choice for first-time buyers priced out of Wakad or Tathawade. Under PCMC jurisdiction, property tax is lower than PMC areas. The locality is rapidly developing its own social infrastructure with schools, hospitals, and retail. Metro Line 3 passing through Ravet will be a transformational connectivity upgrade expected in 2026.",
+
+    "investorNote": "Highest upside potential in West Pune for long-term investors. PCMC jurisdiction means lower property tax. Metro is the key trigger. Entry price still attractive at ₹8,200/sqft versus ₹12,800 in Hinjawadi.",
+
+    "activeProjectCount": 8,
+    "tags": ["affordable", "pcmc", "metro_upcoming", "first_home", "high_upside", "west_pune"]
+  },
+
+  {
+    "slug": "bavdhan",
+    "name": "Bavdhan",
+    "displayName": "Bavdhan",
+    "microMarket": "West Pune",
+    "district": "Pune",
+    "pincode": "411021",
+    "coordinates": { "lat": 18.5200, "lng": 73.7680 },
+
+    "pricing": {
+      "avgPricePerSqft": 12200,
+      "priceRangeMin": 10000,
+      "priceRangeMax": 16500,
+      "appreciation1yr": 13.0,
+      "appreciation3yr": 68.0,
+      "rentalYield": 2.9,
+      "avgRentFor2BHK": 28500
+    },
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 7260 },
+      { "date": "2022-07", "pricePerSqft": 8000 },
+      { "date": "2023-01", "pricePerSqft": 9000 },
+      { "date": "2023-07", "pricePerSqft": 10200 },
+      { "date": "2024-01", "pricePerSqft": 11200 },
+      { "date": "2024-07", "pricePerSqft": 11800 },
+      { "date": "2025-01", "pricePerSqft": 12200 }
+    ],
+
+    "topITCompanies": [
+      "Hinjawadi IT Park (12km)", "Rajiv Gandhi Infotech Park",
+      "Pune University tech belt", "Senapati Bapat Road (BFSI)"
+    ],
+
+    "upcomingInfra": [
+      { "name": "Bavdhan–Chandni Chowk flyover", "expectedYear": 2025, "impact": "medium" },
+      { "name": "Pune Metro Line 3 nearby", "expectedYear": 2026, "impact": "medium" }
+    ],
+
+    "connectivity": {
+      "toPuneStation": "16 km / 32 min",
+      "toPuneAirport": "24 km / 42 min",
+      "toMumbai": "158 km / 2.5 hr",
+      "nearestMetroStation": "Chandni Chowk (Metro Line 3, 3km)",
+      "busRoutes": ["PMPML 158", "PMPML 12"]
+    },
+
+    "overview": "Bavdhan sits on the hillside between Kothrud and Hinjawadi, offering a quieter and greener residential experience than the IT corridor itself. It attracts buyers who value peace, scenic surroundings, and proximity to Pune University, while maintaining access to Hinjawadi via Chandni Chowk. The area is known for boutique residential projects by established Pune builders.",
+
+    "investorNote": "Premium address with lower commercial density — ideal for end-users. Rental demand is steady from Hinjawadi professionals seeking quieter living.",
+
+    "activeProjectCount": 5,
+    "tags": ["premium", "green_living", "west_pune", "quiet", "scenic"]
+  },
+
+  {
+    "slug": "koregaon-park",
+    "name": "Koregaon Park",
+    "displayName": "Koregaon Park",
+    "microMarket": "Central Pune",
+    "district": "Pune",
+    "pincode": "411001",
+    "coordinates": { "lat": 18.5362, "lng": 73.8934 },
+
+    "pricing": {
+      "avgPricePerSqft": 22000,
+      "priceRangeMin": 18000,
+      "priceRangeMax": 45000,
+      "appreciation1yr": 10.0,
+      "appreciation3yr": 45.0,
+      "rentalYield": 2.2,
+      "avgRentFor2BHK": 55000
+    },
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 15170 },
+      { "date": "2022-07", "pricePerSqft": 16500 },
+      { "date": "2023-01", "pricePerSqft": 17800 },
+      { "date": "2023-07", "pricePerSqft": 19500 },
+      { "date": "2024-01", "pricePerSqft": 20800 },
+      { "date": "2024-07", "pricePerSqft": 21500 },
+      { "date": "2025-01", "pricePerSqft": 22000 }
+    ],
+
+    "topITCompanies": [
+      "Senapati Bapat Road (BFSI)", "Deutsche Bank", "Barclays",
+      "Goldman Sachs Pune", "Morgan Stanley"
+    ],
+
+    "upcomingInfra": [
+      { "name": "Pune Metro Line 1 extension", "expectedYear": 2026, "impact": "medium" }
+    ],
+
+    "connectivity": {
+      "toPuneStation": "4 km / 12 min",
+      "toPuneAirport": "12 km / 25 min",
+      "toMumbai": "145 km / 2.5 hr",
+      "nearestMetroStation": "Bund Garden (Metro Line 1)",
+      "busRoutes": ["Multiple PMPML routes"]
+    },
+
+    "overview": "Koregaon Park is Pune's most prestigious address — the Beverly Hills of the city. Home to luxury bungalows, high-end restaurants, the famous Osho Ashram, and Pune's top nightlife, it is the address of choice for CXOs, NRIs, and HNIs. New launches here are exclusively premium or luxury. Entry price of ₹18,000/sqft is the floor, with branded residences touching ₹40,000+/sqft.",
+
+    "investorNote": "Prestige market — not a yield play. Strong capital preservation and luxury brand value. NRI and HNI buyer base keeps demand resilient even in slow markets.",
+
+    "activeProjectCount": 3,
+    "tags": ["luxury", "prestige", "central_pune", "hni", "nri_demand"]
+  },
+
+  {
+    "slug": "kalyani-nagar",
+    "name": "Kalyani Nagar",
+    "displayName": "Kalyani Nagar",
+    "microMarket": "Central Pune",
+    "district": "Pune",
+    "pincode": "411006",
+    "coordinates": { "lat": 18.5440, "lng": 73.9040 },
+
+    "pricing": {
+      "avgPricePerSqft": 18500,
+      "priceRangeMin": 15000,
+      "priceRangeMax": 30000,
+      "appreciation1yr": 11.4,
+      "appreciation3yr": 54.2,
+      "rentalYield": 2.5,
+      "avgRentFor2BHK": 45000
+    },
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 12000 },
+      { "date": "2022-07", "pricePerSqft": 13200 },
+      { "date": "2023-01", "pricePerSqft": 14800 },
+      { "date": "2023-07", "pricePerSqft": 16200 },
+      { "date": "2024-01", "pricePerSqft": 17400 },
+      { "date": "2024-07", "pricePerSqft": 18000 },
+      { "date": "2025-01", "pricePerSqft": 18500 }
+    ],
+
+    "topITCompanies": [
+      "Eon IT Park (3km)", "World Trade Center (3km)", "Kharadi IT Park",
+      "Forbes Marshall", "Bajaj Auto HQ (nearby)"
+    ],
+
+    "upcomingInfra": [
+      { "name": "Kalyani Nagar–Kharadi metro link", "expectedYear": 2027, "impact": "medium" }
+    ],
+
+    "connectivity": {
+      "toPuneStation": "7 km / 18 min",
+      "toPuneAirport": "9 km / 20 min",
+      "toMumbai": "142 km / 2.5 hr",
+      "nearestMetroStation": "Ramwadi (Metro Line 2, 3km)",
+      "busRoutes": ["PMPML 154", "PMPML 118"]
+    },
+
+    "overview": "Kalyani Nagar is central Pune's premier residential locality — often preferred over Koregaon Park for its IT connectivity and more modern residential stock. It is equidistant from Kharadi IT Park and Pune Airport, making it highly sought after. The locality has seen consistent luxury and premium new launches and is home to Pune's top schools (Victorious Kidss, Mercedes-Benz International School) and fine dining.",
+
+    "investorNote": "Airport and IT proximity makes this the premium choice for CXO and senior management buyers. Rental demand from BFSI and multinational expat employees is strong and stable.",
+
+    "activeProjectCount": 4,
+    "tags": ["luxury", "premium", "airport_proximity", "central_pune", "schools"]
+  },
+
+  {
+    "slug": "manjari",
+    "name": "Manjari",
+    "displayName": "Manjari",
+    "microMarket": "East Pune",
+    "district": "Pune",
+    "pincode": "412307",
+    "coordinates": { "lat": 18.5010, "lng": 73.9728 },
+
+    "pricing": {
+      "avgPricePerSqft": 9800,
+      "priceRangeMin": 7500,
+      "priceRangeMax": 13000,
+      "appreciation1yr": 17.3,
+      "appreciation3yr": 77.0,
+      "rentalYield": 3.6,
+      "avgRentFor2BHK": 20000
+    },
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 5535 },
+      { "date": "2022-07", "pricePerSqft": 6100 },
+      { "date": "2023-01", "pricePerSqft": 6900 },
+      { "date": "2023-07", "pricePerSqft": 7900 },
+      { "date": "2024-01", "pricePerSqft": 8900 },
+      { "date": "2024-07", "pricePerSqft": 9400 },
+      { "date": "2025-01", "pricePerSqft": 9800 }
+    ],
+
+    "topITCompanies": [
+      "Magarpatta Cybercity (5km)", "EON IT Park (5km)", "Hadapsar IT Hub",
+      "Kharadi IT (6km)"
+    ],
+
+    "upcomingInfra": [
+      { "name": "Manjari–Kharadi bypass", "expectedYear": 2025, "impact": "high" },
+      { "name": "Amanora–Manjari road widening", "expectedYear": 2025, "impact": "medium" }
+    ],
+
+    "connectivity": {
+      "toPuneStation": "16 km / 30 min",
+      "toPuneAirport": "11 km / 22 min",
+      "toMumbai": "148 km",
+      "nearestMetroStation": "Ramwadi (Metro Line 2, 7km)",
+      "busRoutes": ["PMPML 154"]
+    },
+
+    "overview": "Manjari is emerging as East Pune's most exciting growth story. Sitting adjacent to Amanora Park Town — one of Pune's largest and most successful townships — it benefits from spillover demand while still being priced at a significant discount. The area has seen aggressive land acquisition by branded developers like Godrej in 2023–24. The Manjari–Kharadi bypass, nearing completion, will cut commute times to Kharadi IT Park to under 15 minutes.",
+
+    "investorNote": "Highest 3-year appreciation in east Pune at 77%. Best risk-adjusted entry for investors. Godrej launch validates the location. Bypass completion is immediate catalyst.",
+
+    "activeProjectCount": 7,
+    "tags": ["emerging", "east_pune", "high_appreciation", "investment", "bypass_upcoming"]
+  },
+
+  {
+    "slug": "undri",
+    "name": "Undri",
+    "displayName": "Undri",
+    "microMarket": "South Pune",
+    "district": "Pune",
+    "pincode": "411060",
+    "coordinates": { "lat": 18.4580, "lng": 73.9020 },
+
+    "pricing": {
+      "avgPricePerSqft": 8500,
+      "priceRangeMin": 6800,
+      "priceRangeMax": 11500,
+      "appreciation1yr": 13.3,
+      "appreciation3yr": 61.9,
+      "rentalYield": 3.4,
+      "avgRentFor2BHK": 17000
+    },
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 5250 },
+      { "date": "2022-07", "pricePerSqft": 5800 },
+      { "date": "2023-01", "pricePerSqft": 6500 },
+      { "date": "2023-07", "pricePerSqft": 7200 },
+      { "date": "2024-01", "pricePerSqft": 7800 },
+      { "date": "2024-07", "pricePerSqft": 8200 },
+      { "date": "2025-01", "pricePerSqft": 8500 }
+    ],
+
+    "topITCompanies": [
+      "Magarpatta Cybercity (8km)", "Hadapsar IT Hub (6km)",
+      "Kothrud IT offices", "Kondhwa commercial belt"
+    ],
+
+    "upcomingInfra": [
+      { "name": "Undri–Pisoli ring road", "expectedYear": 2026, "impact": "high" }
+    ],
+
+    "connectivity": {
+      "toPuneStation": "18 km / 38 min",
+      "toPuneAirport": "16 km / 30 min",
+      "toMumbai": "155 km",
+      "nearestMetroStation": "Hadapsar (Metro Line 1, 6km)",
+      "busRoutes": ["PMPML 22", "PMPML 62"]
+    },
+
+    "overview": "Undri is South Pune's most affordable and fastest-growing residential destination. The locality benefits from its proximity to Hadapsar and Magarpatta while staying significantly more affordable. A large number of mid-segment residential projects have launched here in the past 2 years, targeting first-time buyers. The Undri–Pisoli ring road will improve connectivity to both the airport and IT hubs.",
+
+    "investorNote": "Best affordable entry point in South Pune. 3.4% yield and consistent demand from Hadapsar/Magarpatta professionals. Ring road completion expected to compress the price gap with Hadapsar.",
+
+    "activeProjectCount": 9,
+    "tags": ["affordable", "south_pune", "first_home", "value", "emerging"]
+  },
+
+  {
+    "slug": "hadapsar",
+    "name": "Hadapsar",
+    "displayName": "Hadapsar",
+    "microMarket": "East / South Pune",
+    "district": "Pune",
+    "pincode": "411028",
+    "coordinates": { "lat": 18.5020, "lng": 73.9340 },
+
+    "pricing": {
+      "avgPricePerSqft": 10500,
+      "priceRangeMin": 8500,
+      "priceRangeMax": 15000,
+      "appreciation1yr": 14.1,
+      "appreciation3yr": 68.0,
+      "rentalYield": 3.5,
+      "avgRentFor2BHK": 22000
+    },
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 6250 },
+      { "date": "2022-07", "pricePerSqft": 6900 },
+      { "date": "2023-01", "pricePerSqft": 7800 },
+      { "date": "2023-07", "pricePerSqft": 8900 },
+      { "date": "2024-01", "pricePerSqft": 9700 },
+      { "date": "2024-07", "pricePerSqft": 10100 },
+      { "date": "2025-01", "pricePerSqft": 10500 }
+    ],
+
+    "topITCompanies": [
+      "Magarpatta Cybercity", "EON IT Park (6km)", "Kharadi IT (7km)",
+      "Cummins India HQ", "BHEL Hadapsar", "Emerson"
+    ],
+
+    "upcomingInfra": [
+      { "name": "Pune Metro Line 1 (Hadapsar spur)", "expectedYear": 2026, "impact": "high" },
+      { "name": "Hadapsar–Solapur Road upgrade", "expectedYear": 2025, "impact": "medium" }
+    ],
+
+    "connectivity": {
+      "toPuneStation": "12 km / 28 min",
+      "toPuneAirport": "12 km / 25 min",
+      "toMumbai": "148 km",
+      "nearestMetroStation": "Hadapsar (Metro Line 1, 2026)",
+      "busRoutes": ["PMPML 154", "PMPML 62", "PMPML 22"]
+    },
+
+    "overview": "Hadapsar hosts Magarpatta Cybercity — one of India's largest IT parks — and sits on the Solapur Road corridor linking Pune to Solapur and beyond. The area has excellent social infrastructure with Seasons Mall, multiple hospitals, and premium schools. Metro Line 1 extension to Hadapsar will be a significant 2026 catalyst. Prices remain competitive relative to Kharadi despite similar IT employment density.",
+
+    "investorNote": "Magarpatta employment base of 70,000+ professionals drives perpetual rental demand. Metro catalyst in 2026. 3.5% yield at still-affordable price points makes this a solid income + appreciation play.",
+
+    "activeProjectCount": 8,
+    "tags": ["it_hub", "metro_upcoming", "east_pune", "magarpatta", "balanced"]
+  },
+
+  {
+    "slug": "viman-nagar",
+    "name": "Viman Nagar",
+    "displayName": "Viman Nagar",
+    "microMarket": "Central East Pune",
+    "district": "Pune",
+    "pincode": "411014",
+    "coordinates": { "lat": 18.5670, "lng": 73.9110 },
+
+    "pricing": {
+      "avgPricePerSqft": 13500,
+      "priceRangeMin": 11000,
+      "priceRangeMax": 20000,
+      "appreciation1yr": 12.5,
+      "appreciation3yr": 58.8,
+      "rentalYield": 2.9,
+      "avgRentFor2BHK": 32000
+    },
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 8500 },
+      { "date": "2022-07", "pricePerSqft": 9400 },
+      { "date": "2023-01", "pricePerSqft": 10600 },
+      { "date": "2023-07", "pricePerSqft": 11800 },
+      { "date": "2024-01", "pricePerSqft": 12800 },
+      { "date": "2024-07", "pricePerSqft": 13200 },
+      { "date": "2025-01", "pricePerSqft": 13500 }
+    ],
+
+    "topITCompanies": [
+      "Kharadi EON IT Park (3km)", "World Trade Center (3km)",
+      "Phoenix Marketcity offices", "Nagar Road IT belt"
+    ],
+
+    "upcomingInfra": [
+      { "name": "Viman Nagar Metro station (Line 2)", "expectedYear": 2025, "impact": "high" }
+    ],
+
+    "connectivity": {
+      "toPuneStation": "10 km / 22 min",
+      "toPuneAirport": "4 km / 10 min",
+      "toMumbai": "142 km",
+      "nearestMetroStation": "Viman Nagar (Metro Line 2)",
+      "busRoutes": ["PMPML 154", "PMPML 118"]
+    },
+
+    "overview": "Viman Nagar is Pune's airport locality — just 4km from the terminal — making it irreplaceable for frequent flyers and senior professionals. With Phoenix Marketcity mall, premium restaurants, and direct Nagar Road access to Kharadi, it offers a very complete lifestyle package. New launches here are mostly premium and above. The Metro Line 2 station at Viman Nagar is operational, making it one of the few transit-connected premium addresses in Pune.",
+
+    "investorNote": "Airport proximity + metro connectivity is a rare combination in Pune. Corporate traveller rental demand maintains year-round occupancy. Premium two-bedroom apartments rent at ₹30,000–₹40,000/month.",
+
+    "activeProjectCount": 5,
+    "tags": ["premium", "airport_proximity", "metro_connected", "central_east", "frequent_flyer"]
+  },
+
+  {
+    "slug": "sus",
+    "name": "Sus",
+    "displayName": "Sus",
+    "microMarket": "West Pune",
+    "district": "Pune",
+    "pincode": "411021",
+    "coordinates": { "lat": 18.5360, "lng": 73.7600 },
+
+    "pricing": {
+      "avgPricePerSqft": 10200,
+      "priceRangeMin": 8500,
+      "priceRangeMax": 14000,
+      "appreciation1yr": 16.0,
+      "appreciation3yr": 70.0,
+      "rentalYield": 3.1,
+      "avgRentFor2BHK": 22000
+    },
+
+    "priceHistory": [
+      { "date": "2022-01", "pricePerSqft": 6000 },
+      { "date": "2022-07", "pricePerSqft": 6700 },
+      { "date": "2023-01", "pricePerSqft": 7500 },
+      { "date": "2023-07", "pricePerSqft": 8600 },
+      { "date": "2024-01", "pricePerSqft": 9500 },
+      { "date": "2024-07", "pricePerSqft": 9900 },
+      { "date": "2025-01", "pricePerSqft": 10200 }
+    ],
+
+    "topITCompanies": [
+      "Hinjawadi IT Park (8km)", "Baner BFSI belt (3km)",
+      "Balewadi High Street offices", "Wakad IT offices"
+    ],
+
+    "upcomingInfra": [
+      { "name": "Sus–Pashan road upgrade", "expectedYear": 2025, "impact": "medium" },
+      { "name": "Chandni Chowk Metro (4km, Line 3)", "expectedYear": 2026, "impact": "medium" }
+    ],
+
+    "connectivity": {
+      "toPuneStation": "20 km / 38 min",
+      "toPuneAirport": "26 km / 44 min",
+      "toMumbai": "160 km",
+      "nearestMetroStation": "Chandni Chowk (4km, 2026)",
+      "busRoutes": ["PMPML 12", "PMPML 158"]
+    },
+
+    "overview": "Sus sits at the confluence of Baner, Pashan, and Bavdhan — three of Pune's most premium west-side addresses. Historically a village, it has transformed into a premium residential zone offering larger plot sizes and lower FSI than denser localities. Sus attracts buyers who want the Baner address quality at a 20–25% lower price. Several branded developers have announced projects here in 2023–24. The locality is hilly and green, which adds to its premium lifestyle appeal.",
+
+    "investorNote": "Emerging premium address with a 20–25% valuation gap vs Baner — that gap is narrowing. Large carpet areas and green surroundings drive strong end-user demand. Metro connectivity via Chandni Chowk will close the last connectivity gap.",
+
+    "activeProjectCount": 4,
+    "tags": ["emerging_premium", "green_living", "west_pune", "baner_adjacent", "large_plots"]
+  }
+]
