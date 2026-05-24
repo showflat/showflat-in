@@ -228,8 +228,23 @@ function Pill({
 
 // ─── Main component ───────────────────────────────────────────────────────────
 
-export default function ProjectsClient({ projects }: { projects: Project[] }) {
-  const [budget, setBudget] = useState('all')
+function resolveBudget(param: string | undefined): string {
+  if (!param) return 'all'
+  if (param === 'affordable') return 'u75'
+  if (param === 'premium') return '100-150'
+  if (param === 'luxury') return '150plus'
+  const valid = ['all', 'u75', '75-100', '100-150', '150plus']
+  return valid.includes(param) ? param : 'all'
+}
+
+export default function ProjectsClient({
+  projects,
+  initialBudget,
+}: {
+  projects: Project[]
+  initialBudget?: string
+}) {
+  const [budget, setBudget] = useState(() => resolveBudget(initialBudget))
   const [bhk, setBhk] = useState('all')
   const [locality, setLocality] = useState('all')
   const [possession, setPossession] = useState('all')

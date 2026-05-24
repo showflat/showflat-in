@@ -172,7 +172,7 @@ export default async function ProjectPage({
         <nav className="flex items-center gap-2 text-xs text-[#6b7280]">
           <Link href="/" className="hover:text-[#1a56db] transition-colors">Home</Link>
           <span>›</span>
-          <Link href="/properties" className="hover:text-[#1a56db] transition-colors">Projects</Link>
+          <Link href="/projects" className="hover:text-[#1a56db] transition-colors">Projects</Link>
           <span>›</span>
           <span className="text-[#111827] font-medium truncate">{p.name}</span>
         </nav>

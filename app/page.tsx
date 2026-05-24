@@ -24,6 +24,7 @@ interface Config {
 }
 interface Project {
   id: string
+  slug: string
   name: string
   builder: { name: string }
   locality: string
@@ -91,13 +92,18 @@ function Navbar() {
           </Link>
 
           <div className="hidden md:flex items-center gap-7">
-            {['Properties', 'Localities', 'Tools', 'About'].map((item) => (
+            {[
+              { label: 'Properties', href: '/projects' },
+              { label: 'Localities', href: '/localities' },
+              { label: 'Tools', href: '/tools/emi-calculator' },
+              { label: 'About', href: '/about' },
+            ].map((item) => (
               <Link
-                key={item}
-                href={`/${item.toLowerCase()}`}
+                key={item.label}
+                href={item.href}
                 className="text-sm font-medium text-[#6b7280] hover:text-[#111827] transition-colors"
               >
-                {item}
+                {item.label}
               </Link>
             ))}
           </div>
@@ -188,6 +194,7 @@ function BudgetCategories() {
   const cats = [
     {
       label: 'Affordable',
+      budget: 'affordable',
       range: '₹50L – ₹99L',
       desc: 'First home buyers & young IT professionals',
       border: 'border-blue-200',
@@ -197,6 +204,7 @@ function BudgetCategories() {
     },
     {
       label: 'Premium',
+      budget: 'premium',
       range: '₹1Cr – ₹2Cr',
       desc: 'Upgrade buyers & senior professionals',
       border: 'border-green-200',
@@ -206,6 +214,7 @@ function BudgetCategories() {
     },
     {
       label: 'Luxury',
+      budget: 'luxury',
       range: '₹2Cr+',
       desc: 'HNIs, NRIs & prestige addresses',
       border: 'border-purple-200',
@@ -225,11 +234,9 @@ function BudgetCategories() {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {cats.map((c) => (
-            <a
+            <Link
               key={c.label}
-              href={WA}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`/projects?budget=${c.budget}`}
               className={`rounded-xl border-2 ${c.border} ${c.bg} p-6 hover:shadow-md transition-all group`}
             >
               <span className={`inline-block text-xs font-bold px-2.5 py-1 rounded-full mb-4 ${c.badge}`}>
@@ -240,7 +247,7 @@ function BudgetCategories() {
               <span className={`text-sm font-semibold ${c.cta} group-hover:underline`}>
                 See projects →
               </span>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
@@ -249,37 +256,46 @@ function BudgetCategories() {
 }
 
 function ProjectCard({ p }: { p: Project }) {
+  const waText = encodeURIComponent(
+    `Hi ShowFlat! I want to book a site visit for ${p.name} in ${p.locality}.`
+  )
   return (
     <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex flex-col">
-      <div className="relative h-48 bg-gradient-to-b from-[#1a56db] to-[#0f2361] flex flex-col justify-between p-5">
-        <div>
-          <span className="text-xs font-bold bg-[#16a34a] text-white px-2.5 py-1 rounded-full">
-            RERA ✓
-          </span>
-        </div>
-        <div>
-          <p className="text-blue-200 text-xs font-medium mb-1 truncate">{p.locality}, Pune</p>
-          <h3 className="text-white font-extrabold text-xl leading-tight line-clamp-2 mb-3">{p.name}</h3>
-          <div className="flex gap-2 flex-wrap">
-            {p.configs.map((c) => (
-              <span
-                key={c.type}
-                className="text-xs font-semibold bg-white/15 text-white/90 px-2.5 py-1 rounded-full"
-              >
-                {c.type}
-              </span>
-            ))}
+      <Link href={`/projects/${p.slug}`} className="block">
+        <div className="relative h-48 bg-gradient-to-b from-[#1a56db] to-[#0f2361] flex flex-col justify-between p-5">
+          <div>
+            <span className="text-xs font-bold bg-[#16a34a] text-white px-2.5 py-1 rounded-full">
+              RERA ✓
+            </span>
+          </div>
+          <div>
+            <p className="text-blue-200 text-xs font-medium mb-1 truncate">{p.locality}, Pune</p>
+            <h3 className="text-white font-extrabold text-xl leading-tight line-clamp-2 mb-3">{p.name}</h3>
+            <div className="flex gap-2 flex-wrap">
+              {p.configs.map((c) => (
+                <span
+                  key={c.type}
+                  className="text-xs font-semibold bg-white/15 text-white/90 px-2.5 py-1 rounded-full"
+                >
+                  {c.type}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
 
       <div className="p-5 flex flex-col flex-1">
-        <p className="text-xs text-[#6b7280] mb-4">{p.builder.name}</p>
+        <Link href={`/projects/${p.slug}`} className="text-xs text-[#6b7280] mb-4 hover:text-[#1a56db] transition-colors">
+          {p.builder.name}
+        </Link>
 
         <div className="mt-auto pt-3 border-t border-gray-100">
-          <p className="text-lg font-extrabold text-[#1a56db] mb-2">
-            ₹{p.priceRange.displayMin} – ₹{p.priceRange.displayMax}
-          </p>
+          <Link href={`/projects/${p.slug}`} className="block">
+            <p className="text-lg font-extrabold text-[#1a56db] mb-2">
+              ₹{p.priceRange.displayMin} – ₹{p.priceRange.displayMax}
+            </p>
+          </Link>
           <div className="flex gap-2 flex-wrap mb-3">
             <span className="text-xs bg-gray-100 text-[#6b7280] px-2.5 py-1 rounded-full font-medium">
               {carpetRange(p.configs)} carpet
@@ -289,7 +305,7 @@ function ProjectCard({ p }: { p: Project }) {
             </span>
           </div>
           <a
-            href={WA}
+            href={`${WA}?text=${waText}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 w-full bg-[#16a34a] text-white text-sm font-semibold py-2.5 rounded-lg hover:bg-green-700 transition-colors"
@@ -337,11 +353,9 @@ function LocalitiesStrip({ localities }: { localities: Locality[] }) {
         </div>
         <div className="flex gap-4 overflow-x-auto pb-6 px-4 sm:px-6 lg:px-8">
           {localities.map((l) => (
-            <a
+            <Link
               key={l.slug}
-              href={WA}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`/localities/${l.slug}`}
               className="shrink-0 w-52 bg-white border border-gray-200 rounded-xl p-4 hover:border-[#1a56db] hover:shadow-md transition-all"
             >
               <div className="flex items-center justify-between mb-3">
@@ -357,7 +371,7 @@ function LocalitiesStrip({ localities }: { localities: Locality[] }) {
                 ₹{l.pricing.avgPricePerSqft.toLocaleString('en-IN')}/sqft avg
               </p>
               <p className="text-xs text-[#6b7280]">3yr appreciation</p>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
@@ -428,7 +442,12 @@ function WhyShowFlat() {
 }
 
 function Footer() {
-  const navLinks = ['Properties', 'Localities', 'Tools', 'About']
+  const navLinks = [
+    { label: 'Properties', href: '/projects' },
+    { label: 'Localities', href: '/localities' },
+    { label: 'Tools', href: '/tools/emi-calculator' },
+    { label: 'About', href: '/about' },
+  ]
   return (
     <footer className="bg-[#111827] text-gray-400 py-12 px-4">
       <div className="max-w-7xl mx-auto">
@@ -448,12 +467,12 @@ function Footer() {
             <h4 className="text-sm font-semibold text-white mb-4">Quick links</h4>
             <ul className="space-y-2">
               {navLinks.map((l) => (
-                <li key={l}>
+                <li key={l.label}>
                   <Link
-                    href={`/${l.toLowerCase()}`}
+                    href={l.href}
                     className="text-sm hover:text-white transition-colors"
                   >
-                    {l}
+                    {l.label}
                   </Link>
                 </li>
               ))}

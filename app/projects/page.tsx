@@ -15,15 +15,20 @@ export const metadata: Metadata = {
   },
 }
 
-export default function ProjectsPage() {
+export default async function ProjectsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ budget?: string }>
+}) {
   const projects = JSON.parse(
     readFileSync(join(process.cwd(), 'data/projects.json'), 'utf-8')
   )
+  const { budget } = await searchParams
 
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      <ProjectsClient projects={projects} />
+      <ProjectsClient projects={projects} initialBudget={budget} />
     </div>
   )
 }

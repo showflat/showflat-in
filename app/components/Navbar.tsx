@@ -21,13 +21,18 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden md:flex items-center gap-7">
-            {['Properties', 'Localities', 'Tools', 'About'].map((item) => (
+            {[
+              { label: 'Properties', href: '/projects' },
+              { label: 'Localities', href: '/localities' },
+              { label: 'Tools', href: '/tools/emi-calculator' },
+              { label: 'About', href: '/about' },
+            ].map((item) => (
               <Link
-                key={item}
-                href={`/${item.toLowerCase()}`}
+                key={item.label}
+                href={item.href}
                 className="text-sm font-medium text-[#6b7280] hover:text-[#111827] transition-colors"
               >
-                {item}
+                {item.label}
               </Link>
             ))}
           </div>
