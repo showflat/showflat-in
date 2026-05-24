@@ -21,6 +21,7 @@ const WA = 'https://wa.me/919130114411'
 interface Config {
   type: string
   carpetSqft: number
+  pricePerSqft: number
 }
 interface Project {
   id: string
@@ -30,7 +31,7 @@ interface Project {
   locality: string
   possessionDate: string
   configs: Config[]
-  priceRange: { displayMin: string; displayMax: string }
+  priceRange: { min: number; max: number; displayMin: string; displayMax: string }
 }
 interface Locality {
   slug: string
@@ -70,9 +71,9 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <Hero />
-      <StatsBar />
-      <BudgetCategories />
+      <Hero projectCount={projects.length} localityCount={localities.length} />
+      <StatsBar projectCount={projects.length} localityCount={localities.length} />
+      <BudgetCategories projects={projects} />
       <FeaturedProjects projects={projects} />
       <LocalitiesStrip localities={localities} />
       <WhyShowFlat />
@@ -123,7 +124,7 @@ function Navbar() {
   )
 }
 
-function Hero() {
+function Hero({ projectCount, localityCount }: { projectCount: number; localityCount: number }) {
   return (
     <section className="bg-gradient-to-br from-[#1a56db] to-[#1e3a8a] text-white py-12 px-4 sm:py-16">
       <div className="max-w-4xl mx-auto text-center">
@@ -139,7 +140,7 @@ function Hero() {
         </h1>
 
         <p className="text-lg sm:text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-          6 RERA verified projects &middot; 15 localities &middot; ₹55L to ₹2Cr
+          {projectCount} RERA verified projects &middot; {localityCount} localities &middot; ₹55L to ₹2Cr
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -164,10 +165,10 @@ function Hero() {
   )
 }
 
-function StatsBar() {
+function StatsBar({ projectCount, localityCount }: { projectCount: number; localityCount: number }) {
   const stats = [
-    { value: '6+', label: 'Projects' },
-    { value: '15', label: 'Localities' },
+    { value: `${projectCount}+`, label: 'Projects' },
+    { value: `${localityCount}`, label: 'Localities' },
     { value: '₹0', label: 'Brokerage' },
     { value: 'RERA', label: 'Verified' },
   ]
@@ -190,39 +191,43 @@ function StatsBar() {
   )
 }
 
-function BudgetCategories() {
-  const cats = [
+function BudgetCategories({ projects }: { projects: Project[] }) {
+  const tiers = [
     {
       label: 'Affordable',
       budget: 'affordable',
-      range: '₹50L – ₹99L',
+      range: '₹50L–₹99L',
       desc: 'First home buyers & young IT professionals',
+      filter: (p: Project) => p.priceRange.min < 10000000,
       border: 'border-blue-200',
       bg: 'bg-blue-50',
       badge: 'bg-blue-100 text-blue-700',
-      cta: 'text-[#1a56db]',
+      btn: 'bg-[#1a56db] hover:bg-blue-700 text-white',
     },
     {
       label: 'Premium',
       budget: 'premium',
-      range: '₹1Cr – ₹2Cr',
+      range: '₹1Cr–₹2Cr',
       desc: 'Upgrade buyers & senior professionals',
+      filter: (p: Project) => p.priceRange.max >= 10000000 && p.priceRange.min < 20000000,
       border: 'border-green-200',
       bg: 'bg-green-50',
       badge: 'bg-green-100 text-green-700',
-      cta: 'text-[#16a34a]',
+      btn: 'bg-[#16a34a] hover:bg-green-700 text-white',
     },
     {
       label: 'Luxury',
       budget: 'luxury',
       range: '₹2Cr+',
       desc: 'HNIs, NRIs & prestige addresses',
+      filter: (p: Project) => p.priceRange.max >= 20000000,
       border: 'border-purple-200',
       bg: 'bg-purple-50',
       badge: 'bg-purple-100 text-purple-700',
-      cta: 'text-purple-600',
+      btn: 'bg-purple-600 hover:bg-purple-700 text-white',
     },
   ]
+
   return (
     <section className="py-16 px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto">
@@ -233,22 +238,63 @@ function BudgetCategories() {
           Curated projects for every price point in Pune
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {cats.map((c) => (
-            <Link
-              key={c.label}
-              href={`/projects?budget=${c.budget}`}
-              className={`rounded-xl border-2 ${c.border} ${c.bg} p-6 hover:shadow-md transition-all group`}
-            >
-              <span className={`inline-block text-xs font-bold px-2.5 py-1 rounded-full mb-4 ${c.badge}`}>
-                {c.label}
-              </span>
-              <div className="text-3xl font-extrabold text-[#111827] mb-2">{c.range}</div>
-              <div className="text-sm text-[#6b7280] mb-5">{c.desc}</div>
-              <span className={`text-sm font-semibold ${c.cta} group-hover:underline`}>
-                See projects →
-              </span>
-            </Link>
-          ))}
+          {tiers.map((tier) => {
+            const matching = projects.filter(tier.filter)
+            const allConfigs = matching.flatMap((p) => p.configs)
+            const avgPerSqft = allConfigs.length
+              ? Math.round(allConfigs.reduce((s, c) => s + c.pricePerSqft, 0) / allConfigs.length)
+              : 0
+            const sampleNames = matching.slice(0, 3).map((p) => p.name)
+            const count = matching.length
+
+            return (
+              <Link
+                key={tier.label}
+                href={`/projects?budget=${tier.budget}`}
+                className={`rounded-2xl border-2 ${tier.border} ${tier.bg} p-6 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 flex flex-col`}
+              >
+                {/* Header row */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${tier.badge}`}>
+                    {tier.label}
+                  </span>
+                  <span className="text-xs font-semibold text-[#6b7280]">
+                    {count} project{count !== 1 ? 's' : ''}
+                  </span>
+                </div>
+
+                {/* Range + desc */}
+                <div className="text-2xl font-extrabold text-[#111827] mb-1">{tier.range}</div>
+                <p className="text-sm text-[#6b7280] mb-5">{tier.desc}</p>
+
+                {/* Project name list */}
+                {sampleNames.length > 0 ? (
+                  <ul className="space-y-2 mb-4 flex-1">
+                    {sampleNames.map((name) => (
+                      <li key={name} className="flex items-center gap-2 text-sm text-[#374151]">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#6b7280] shrink-0" />
+                        <span className="truncate">{name}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-sm text-[#6b7280] italic mb-4 flex-1">More launches coming soon</p>
+                )}
+
+                {/* Avg ₹/sqft */}
+                {avgPerSqft > 0 && (
+                  <p className="text-xs text-[#6b7280] mb-4">
+                    Avg ₹{avgPerSqft.toLocaleString('en-IN')}/sqft
+                  </p>
+                )}
+
+                {/* CTA */}
+                <div className={`mt-auto flex items-center justify-center w-full text-sm font-semibold py-2.5 rounded-xl ${tier.btn} transition-colors`}>
+                  Explore {count} project{count !== 1 ? 's' : ''} →
+                </div>
+              </Link>
+            )
+          })}
         </div>
       </div>
     </section>
@@ -260,42 +306,43 @@ function ProjectCard({ p }: { p: Project }) {
     `Hi ShowFlat! I want to book a site visit for ${p.name} in ${p.locality}.`
   )
   return (
-    <div className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow flex flex-col">
-      <Link href={`/projects/${p.slug}`} className="block">
-        <div className="relative h-48 bg-gradient-to-b from-[#1a56db] to-[#0f2361] flex flex-col justify-between p-5">
-          <div>
-            <span className="text-xs font-bold bg-[#16a34a] text-white px-2.5 py-1 rounded-full">
-              RERA ✓
-            </span>
-          </div>
-          <div>
-            <p className="text-blue-200 text-xs font-medium mb-1 truncate">{p.locality}, Pune</p>
-            <h3 className="text-white font-extrabold text-xl leading-tight line-clamp-2 mb-3">{p.name}</h3>
-            <div className="flex gap-2 flex-wrap">
-              {p.configs.map((c) => (
-                <span
-                  key={c.type}
-                  className="text-xs font-semibold bg-white/15 text-white/90 px-2.5 py-1 rounded-full"
-                >
-                  {c.type}
-                </span>
-              ))}
-            </div>
+    <div className="relative bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 flex flex-col">
+      {/* Stretched link covers entire card — sits at z-10 */}
+      <Link
+        href={`/projects/${p.slug}`}
+        className="absolute inset-0 z-10"
+        aria-label={`View ${p.name} details`}
+      />
+
+      <div className="h-48 bg-gradient-to-b from-[#1a56db] to-[#0f2361] flex flex-col justify-between p-5">
+        <div>
+          <span className="text-xs font-bold bg-[#16a34a] text-white px-2.5 py-1 rounded-full">
+            RERA ✓
+          </span>
+        </div>
+        <div>
+          <p className="text-blue-200 text-xs font-medium mb-1 truncate">{p.locality}, Pune</p>
+          <h3 className="text-white font-extrabold text-xl leading-tight line-clamp-2 mb-3">{p.name}</h3>
+          <div className="flex gap-2 flex-wrap">
+            {p.configs.map((c) => (
+              <span
+                key={c.type}
+                className="text-xs font-semibold bg-white/15 text-white/90 px-2.5 py-1 rounded-full"
+              >
+                {c.type}
+              </span>
+            ))}
           </div>
         </div>
-      </Link>
+      </div>
 
       <div className="p-5 flex flex-col flex-1">
-        <Link href={`/projects/${p.slug}`} className="text-xs text-[#6b7280] mb-4 hover:text-[#1a56db] transition-colors">
-          {p.builder.name}
-        </Link>
+        <p className="text-xs text-[#6b7280] mb-4">{p.builder.name}</p>
 
         <div className="mt-auto pt-3 border-t border-gray-100">
-          <Link href={`/projects/${p.slug}`} className="block">
-            <p className="text-lg font-extrabold text-[#1a56db] mb-2">
-              ₹{p.priceRange.displayMin} – ₹{p.priceRange.displayMax}
-            </p>
-          </Link>
+          <p className="text-lg font-extrabold text-[#1a56db] mb-2">
+            ₹{p.priceRange.displayMin} – ₹{p.priceRange.displayMax}
+          </p>
           <div className="flex gap-2 flex-wrap mb-3">
             <span className="text-xs bg-gray-100 text-[#6b7280] px-2.5 py-1 rounded-full font-medium">
               {carpetRange(p.configs)} carpet
@@ -304,11 +351,12 @@ function ProjectCard({ p }: { p: Project }) {
               {formatPossession(p.possessionDate)}
             </span>
           </div>
+          {/* z-20 sits above the z-10 stretched link so clicks go to WhatsApp */}
           <a
             href={`${WA}?text=${waText}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full bg-[#16a34a] text-white text-sm font-semibold py-2.5 rounded-lg hover:bg-green-700 transition-colors"
+            className="relative z-20 flex items-center justify-center gap-2 w-full bg-[#16a34a] text-white text-sm font-semibold py-2.5 rounded-lg hover:bg-green-700 transition-colors"
           >
             <WaIcon />
             Book site visit
@@ -348,7 +396,7 @@ function LocalitiesStrip({ localities }: { localities: Locality[] }) {
             Explore Pune localities
           </h2>
           <p className="text-[#6b7280] text-sm sm:text-base">
-            15 micro-markets — prices, appreciation &amp; IT connectivity at a glance
+            {localities.length} micro-markets — prices, appreciation &amp; IT connectivity at a glance
           </p>
         </div>
         <div className="flex gap-4 overflow-x-auto pb-6 px-4 sm:px-6 lg:px-8">

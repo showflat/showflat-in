@@ -144,23 +144,28 @@ function ProjectCard({ project }: { project: Project }) {
   )
 
   return (
-    <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col">
+    <div className="relative bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+      {/* Stretched link covers entire card at z-10 */}
+      <Link
+        href={`/projects/${project.slug}`}
+        className="absolute inset-0 z-10"
+        aria-label={`View ${project.name} details`}
+      />
+
       {/* Cover */}
-      <Link href={`/projects/${project.slug}`} className="block">
-        <div className="relative h-44 bg-gradient-to-br from-[#1a56db] to-[#0f2361] p-5 flex flex-col justify-between">
-          <div className="flex gap-2 flex-wrap">
-            {bhks.map((b) => (
-              <span key={b} className="text-xs font-semibold bg-white/20 text-white px-2 py-0.5 rounded-full backdrop-blur-sm">
-                {b}
-              </span>
-            ))}
-          </div>
-          <div>
-            <p className="text-blue-200 text-xs font-medium mb-0.5">{project.locality}</p>
-            <h3 className="text-white font-bold text-lg leading-snug line-clamp-2">{project.name}</h3>
-          </div>
+      <div className="h-44 bg-gradient-to-br from-[#1a56db] to-[#0f2361] p-5 flex flex-col justify-between">
+        <div className="flex gap-2 flex-wrap">
+          {bhks.map((b) => (
+            <span key={b} className="text-xs font-semibold bg-white/20 text-white px-2 py-0.5 rounded-full backdrop-blur-sm">
+              {b}
+            </span>
+          ))}
         </div>
-      </Link>
+        <div>
+          <p className="text-blue-200 text-xs font-medium mb-0.5">{project.locality}</p>
+          <h3 className="text-white font-bold text-lg leading-snug line-clamp-2">{project.name}</h3>
+        </div>
+      </div>
 
       {/* Body */}
       <div className="p-4 flex flex-col flex-1">
@@ -186,11 +191,12 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
 
         <div className="mt-auto">
+          {/* z-20 sits above the z-10 stretched link */}
           <a
             href={`${WA}?text=${waText}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full bg-[#16a34a] hover:bg-[#15803d] text-white text-sm font-semibold py-2.5 rounded-xl transition-colors"
+            className="relative z-20 flex items-center justify-center gap-2 w-full bg-[#16a34a] hover:bg-[#15803d] text-white text-sm font-semibold py-2.5 rounded-xl transition-colors"
           >
             <WaIcon />
             Book Free Site Visit

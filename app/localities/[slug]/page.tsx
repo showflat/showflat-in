@@ -242,28 +242,32 @@ export default async function LocalityPage({
                 return (
                   <div
                     key={p.id}
-                    className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col"
+                    className="relative bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200"
                   >
-                    <Link href={`/projects/${p.slug}`} className="block">
-                      <div className="h-40 bg-gradient-to-br from-[#1a56db] to-[#0f2361] p-5 flex flex-col justify-between">
-                        <div className="flex gap-2 flex-wrap">
-                          {bhks.map((b) => (
-                            <span
-                              key={b}
-                              className="text-xs font-semibold bg-white/20 text-white px-2 py-0.5 rounded-full"
-                            >
-                              {b}
-                            </span>
-                          ))}
-                        </div>
-                        <div>
-                          <h3 className="text-white font-bold text-base leading-snug line-clamp-2">
-                            {p.name}
-                          </h3>
-                          <p className="text-blue-200 text-xs mt-0.5">{p.builder.name}</p>
-                        </div>
+                    {/* Stretched link covers entire card at z-10 */}
+                    <Link
+                      href={`/projects/${p.slug}`}
+                      className="absolute inset-0 z-10"
+                      aria-label={`View ${p.name} details`}
+                    />
+                    <div className="h-40 bg-gradient-to-br from-[#1a56db] to-[#0f2361] p-5 flex flex-col justify-between">
+                      <div className="flex gap-2 flex-wrap">
+                        {bhks.map((b) => (
+                          <span
+                            key={b}
+                            className="text-xs font-semibold bg-white/20 text-white px-2 py-0.5 rounded-full"
+                          >
+                            {b}
+                          </span>
+                        ))}
                       </div>
-                    </Link>
+                      <div>
+                        <h3 className="text-white font-bold text-base leading-snug line-clamp-2">
+                          {p.name}
+                        </h3>
+                        <p className="text-blue-200 text-xs mt-0.5">{p.builder.name}</p>
+                      </div>
+                    </div>
                     <div className="p-4 flex flex-col flex-1">
                       <div className="flex items-baseline gap-1 mb-3">
                         <span className="text-lg font-extrabold text-[#111827]">
@@ -280,11 +284,12 @@ export default async function LocalityPage({
                         </span>
                       </div>
                       <div className="mt-auto">
+                        {/* z-20 sits above the z-10 stretched link */}
                         <a
                           href={`${WA}?text=${waText}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2 w-full bg-[#16a34a] hover:bg-[#15803d] text-white text-sm font-semibold py-2.5 rounded-xl transition-colors"
+                          className="relative z-20 flex items-center justify-center gap-2 w-full bg-[#16a34a] hover:bg-[#15803d] text-white text-sm font-semibold py-2.5 rounded-xl transition-colors"
                         >
                           <WaIcon />
                           Book Free Site Visit
