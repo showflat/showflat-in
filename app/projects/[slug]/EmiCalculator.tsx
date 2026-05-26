@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { PieChart, Pie, Cell, Tooltip } from 'recharts'
 
 // ─── Maths ────────────────────────────────────────────────────────────────────
@@ -119,15 +119,30 @@ function Slider({
   )
 }
 
+// ─── Props ────────────────────────────────────────────────────────────────────
+
+interface EmiCalcProps {
+  propertyPrice: number
+  onStateChange?: (state: { loanAmount: number; rate: number; tenure: number }) => void
+  highlightTenure?: number
+}
+
 // ─── Main component ───────────────────────────────────────────────────────────
 
-export default function EmiCalculator({ propertyPrice }: { propertyPrice: number }) {
+const QUICK_TENURES = [15, 20, 25, 30]
+
+export default function EmiCalculator({ propertyPrice, onStateChange, highlightTenure }: EmiCalcProps) {
   const defaultLoan = Math.round((propertyPrice * 0.8) / 100000) * 100000
 
   const [loanAmount, setLoanAmount] = useState(defaultLoan)
   const [tenure, setTenure] = useState(20)
   const [rate, setRate] = useState(8.5)
   const [showAmort, setShowAmort] = useState(false)
+
+  // Notify parent of state changes for snapshot card sync
+  useEffect(() => {
+    onStateChange?.({ loanAmount, rate, tenure })
+  }, [loanAmount, rate, tenure]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const emi = calcEMI(loanAmount, rate, tenure)
   const totalPayable = emi * tenure * 12
@@ -155,17 +170,41 @@ export default function EmiCalculator({ propertyPrice }: { propertyPrice: number
         maxLabel="₹3 Cr"
       />
 
-      <Slider
-        label="Loan Tenure"
-        display={`${tenure} Years`}
-        min={1}
-        max={30}
-        step={1}
-        value={tenure}
-        onChange={setTenure}
-        minLabel="1 yr"
-        maxLabel="30 yrs"
-      />
+      {/* Tenure slider + quick-select buttons */}
+      <div>
+        <Slider
+          label="Loan Tenure"
+          display={`${tenure} Years`}
+          min={1}
+          max={30}
+          step={1}
+          value={tenure}
+          onChange={setTenure}
+          minLabel="1 yr"
+          maxLabel="30 yrs"
+        />
+        <div className="flex gap-2 mt-2">
+          {QUICK_TENURES.map((t) => {
+            const isActive = tenure === t
+            const isHighlighted = highlightTenure === t
+            return (
+              <button
+                key={t}
+                onClick={() => setTenure(t)}
+                className={`flex-1 text-xs font-semibold py-1.5 rounded-lg transition-colors border ${
+                  isActive
+                    ? 'bg-[#1a56db] text-white border-[#1a56db]'
+                    : isHighlighted
+                    ? 'bg-blue-50 text-[#1a56db] border-[#1a56db] ring-2 ring-[#1a56db] ring-offset-1'
+                    : 'bg-gray-50 text-[#6b7280] border-gray-200 hover:border-[#1a56db] hover:text-[#1a56db]'
+                }`}
+              >
+                {t}yr
+              </button>
+            )
+          })}
+        </div>
+      </div>
 
       <Slider
         label="Interest Rate"
@@ -273,15 +312,9 @@ export default function EmiCalculator({ propertyPrice }: { propertyPrice: number
                     className={`${i % 2 === 0 ? 'bg-white' : 'bg-gray-50/60'} border-b border-gray-50 last:border-0`}
                   >
                     <td className="px-2.5 py-1.5 font-semibold text-[#111827]">{row.year}</td>
-                    <td className="px-2.5 py-1.5 text-right text-[#6b7280] tabular-nums">
-                      {fmtShort(row.emiPaid)}
-                    </td>
-                    <td className="px-2.5 py-1.5 text-right font-medium text-[#1a56db] tabular-nums">
-                      {fmtShort(row.principalPaid)}
-                    </td>
-                    <td className="px-2.5 py-1.5 text-right text-orange-600 tabular-nums">
-                      {fmtShort(row.interestPaid)}
-                    </td>
+                    <td className="px-2.5 py-1.5 text-right text-[#6b7280] tabular-nums">{fmtShort(row.emiPaid)}</td>
+                    <td className="px-2.5 py-1.5 text-right font-medium text-[#1a56db] tabular-nums">{fmtShort(row.principalPaid)}</td>
+                    <td className="px-2.5 py-1.5 text-right text-orange-600 tabular-nums">{fmtShort(row.interestPaid)}</td>
                     <td className="px-2.5 py-1.5 text-right text-[#111827] tabular-nums">
                       {row.balance === 0 ? '—' : fmtShort(row.balance)}
                     </td>

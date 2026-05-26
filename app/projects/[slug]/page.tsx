@@ -8,6 +8,7 @@ import ConfigTabs from './ConfigTabs'
 import PriceChart from './PriceChart'
 import EmiCalculator from './EmiCalculator'
 import GallerySection from './GallerySection'
+import LoanSection from './LoanSection'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -356,7 +357,12 @@ export default async function ProjectPage({
             {/* Configurations */}
             <div className="bg-white rounded-2xl p-6 shadow-sm">
               <h2 className="text-xl font-bold text-[#111827] mb-5">Configurations & Floor Plans</h2>
-              <ConfigTabs configs={p.configs} waFloorPlan={waFloorPlan} />
+              <ConfigTabs
+                  configs={p.configs}
+                  waFloorPlan={waFloorPlan}
+                  projectName={p.name}
+                  projectLocality={p.locality}
+                />
             </div>
 
             {/* Amenities */}
@@ -498,44 +504,7 @@ export default async function ProjectPage({
 
             {/* Home Loan Snapshot */}
             <div className="bg-white rounded-2xl p-6 shadow-sm">
-              <div className="flex items-center justify-between mb-5">
-                <h2 className="text-xl font-bold text-[#111827]">Home Loan Snapshot</h2>
-                <span className="text-xs font-medium text-[#6b7280] bg-gray-100 px-3 py-1.5 rounded-full">
-                  at 8.5% p.a.
-                </span>
-              </div>
-
-              <div className="bg-blue-50 border border-blue-100 rounded-xl px-4 py-3 mb-4 text-sm text-[#374151]">
-                <span className="font-semibold text-[#111827]">Loan amount: {fmtINR(loanAmount)}</span>
-                {' '}(80% of ₹{p.priceRange.displayMin} starting price)
-              </div>
-
-              <div className="space-y-3">
-                {loanScenarios.map((s) => (
-                  <div
-                    key={s.tenure}
-                    className="flex items-center justify-between p-4 bg-gray-50 rounded-xl border border-gray-100"
-                  >
-                    <div>
-                      <p className="font-semibold text-[#111827] text-sm">{s.label}</p>
-                      <p className="text-xs text-[#6b7280] mt-0.5">{s.tenure * 12} EMIs at 8.5%</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-xl font-extrabold text-[#1a56db]">
-                        ₹{s.emi.toLocaleString('en-IN')}
-                      </p>
-                      <p className="text-xs text-[#6b7280]">per month</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <p className="mt-4 text-xs text-[#6b7280]">
-                Indicative only. Actual EMI depends on your bank&apos;s rate and processing fee.{' '}
-                <Link href="/tools/emi-calculator" className="text-[#1a56db] font-medium hover:underline">
-                  Use our full EMI calculator →
-                </Link>
-              </p>
+              <LoanSection propertyPrice={p.priceRange.min} />
             </div>
 
             {/* Why Zero Brokerage Matters */}
