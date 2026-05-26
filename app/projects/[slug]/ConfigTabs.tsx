@@ -2,16 +2,21 @@
 
 import { useState } from 'react'
 
+interface ConfigVariant {
+  carpetSqft: number
+  builtUpSqft?: number
+  priceMin?: number | null
+  label?: string
+}
+
 interface Config {
   type: string
-  carpetSqft: number
-  builtUpSqft: number
-  priceMin: number
-  priceMax: number
-  pricePerSqft: number
-  unitsTotal: number
-  unitsAvailable: number
-  floors: string
+  // Legacy flat fields (current 6-project data)
+  carpetSqft?: number
+  builtUpSqft?: number
+  priceMin?: number
+  // New variants array (future data)
+  variants?: ConfigVariant[]
   note?: string
 }
 
@@ -20,26 +25,52 @@ interface Props {
   waFloorPlan: string
   projectName: string
   projectLocality: string
+  projectFloors?: number
 }
 
-export default function ConfigTabs({ configs, waFloorPlan, projectName, projectLocality }: Props) {
+function fmtPrice(n: number): string {
+  if (n >= 10000000) {
+    const v = n / 10000000
+    return `₹${Number.isInteger(v) ? v : v.toFixed(2)} Cr`
+  }
+  return `₹${Math.round(n / 100000)} L`
+}
+
+export default function ConfigTabs({
+  configs,
+  waFloorPlan,
+  projectName,
+  projectLocality,
+  projectFloors,
+}: Props) {
   const [active, setActive] = useState(0)
   const [modalOpen, setModalOpen] = useState(false)
+  const [modalCarpet, setModalCarpet] = useState<number | null>(null)
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [selectedConfig, setSelectedConfig] = useState('')
 
   const c = configs[active]
 
-  function openModal() {
+  // Build display rows from variants array if present, else fall back to flat fields
+  const rows: ConfigVariant[] =
+    c.variants && c.variants.length > 0
+      ? c.variants
+      : c.carpetSqft
+      ? [{ carpetSqft: c.carpetSqft, builtUpSqft: c.builtUpSqft, priceMin: c.priceMin }]
+      : []
+
+  function openModal(carpet: number) {
+    setModalCarpet(carpet)
     setSelectedConfig(c.type)
     setModalOpen(true)
   }
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
+    const carpetStr = modalCarpet ? `${modalCarpet}sqft ` : ''
     const text = encodeURIComponent(
-      `Hi ShowFlat! I want the exact pricing for ${selectedConfig} ${c.carpetSqft}sqft in ${projectName}, ${projectLocality}. My name is ${name}, phone ${phone}.`
+      `Hi ShowFlat! I want pricing for ${selectedConfig} ${carpetStr}in ${projectName}, ${projectLocality}. My name is ${name}, phone ${phone}.`
     )
     window.open(`https://wa.me/919130114411?text=${text}`, '_blank')
     setModalOpen(false)
@@ -66,39 +97,86 @@ export default function ConfigTabs({ configs, waFloorPlan, projectName, projectL
         ))}
       </div>
 
+      {/* Floors badge */}
+      {projectFloors && projectFloors > 0 && (
+        <p className="text-xs font-semibold text-[#6b7280] mb-4">
+          🏢 G+{projectFloors} floors
+        </p>
+      )}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {/* Stats grid */}
-        <div className="grid grid-cols-2 gap-3">
-          {/* Carpet area */}
-          <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
-            <p className="text-xs text-[#6b7280] mb-1.5 font-medium">Carpet Area</p>
-            <p className="font-bold text-[#111827] text-lg leading-tight">{c.carpetSqft} sqft</p>
-            <p className="text-xs text-[#6b7280] mt-0.5">Built-up: {c.builtUpSqft} sqft</p>
-          </div>
+        {/* Variants table */}
+        <div>
+          {rows.length > 0 ? (
+            <div className="overflow-x-auto rounded-xl border border-gray-100">
+              <table className="w-full text-sm">
+                <thead className="bg-gray-50 border-b border-gray-100">
+                  <tr>
+                    <th className="text-left px-4 py-2.5 text-xs font-semibold text-[#6b7280]">
+                      Carpet Area
+                    </th>
+                    {rows.some((r) => r.builtUpSqft) && (
+                      <th className="text-left px-4 py-2.5 text-xs font-semibold text-[#6b7280]">
+                        Built-up
+                      </th>
+                    )}
+                    <th className="text-left px-4 py-2.5 text-xs font-semibold text-[#6b7280]">
+                      Price
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map((row, i) => (
+                    <tr
+                      key={i}
+                      className="border-b border-gray-50 last:border-0 hover:bg-gray-50/60 transition-colors"
+                    >
+                      <td className="px-4 py-3 font-semibold text-[#111827]">
+                        {row.carpetSqft} sqft
+                      </td>
+                      {rows.some((r) => r.builtUpSqft) && (
+                        <td className="px-4 py-3 text-[#6b7280]">
+                          {row.builtUpSqft ? `${row.builtUpSqft} sqft` : '—'}
+                        </td>
+                      )}
+                      <td className="px-4 py-3">
+                        {row.priceMin && row.priceMin > 0 ? (
+                          <span className="font-semibold text-[#1a56db]">
+                            {fmtPrice(row.priceMin)}
+                          </span>
+                        ) : (
+                          <button
+                            onClick={() => openModal(row.carpetSqft)}
+                            className="inline-flex items-center gap-1 text-xs font-semibold text-[#1a56db] border border-[#1a56db] px-2.5 py-1 rounded-full hover:bg-blue-50 transition-colors"
+                          >
+                            Contact for pricing →
+                          </button>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <div className="bg-gray-50 rounded-xl p-5 text-center">
+              <p className="text-sm text-[#6b7280] mb-3">
+                Configuration details available on request
+              </p>
+              <button
+                onClick={() => openModal(0)}
+                className="inline-flex items-center gap-1.5 border-2 border-[#1a56db] text-[#1a56db] text-xs font-bold px-3 py-1.5 rounded-full hover:bg-blue-50 transition-colors"
+              >
+                Contact for exact pricing →
+              </button>
+            </div>
+          )}
 
-          {/* Pricing CTA — replaces Price Range tile */}
-          <div className="bg-gray-50 rounded-xl p-4 border border-gray-100 flex flex-col justify-between">
-            <p className="text-xs text-[#6b7280] mb-2 font-medium">Pricing</p>
-            <button
-              onClick={openModal}
-              className="inline-flex items-center justify-center gap-1.5 border-2 border-[#1a56db] text-[#1a56db] text-xs font-bold px-3 py-1.5 rounded-full hover:bg-blue-50 transition-colors"
-            >
-              Contact for exact pricing →
-            </button>
-          </div>
-
-          {/* Units available */}
-          <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
-            <p className="text-xs text-[#6b7280] mb-1.5 font-medium">Units Available</p>
-            <p className="font-bold text-[#111827] text-lg leading-tight">{c.unitsAvailable}</p>
-            <p className="text-xs text-[#6b7280] mt-0.5">of {c.unitsTotal} total</p>
-          </div>
-
-          {/* Floors — pricePerSqft removed */}
-          <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
-            <p className="text-xs text-[#6b7280] mb-1.5 font-medium">Floors</p>
-            <p className="font-bold text-[#111827] text-lg leading-tight">{c.floors}</p>
-          </div>
+          {c.note && (
+            <p className="mt-3 text-sm text-[#1a56db] bg-blue-50 rounded-lg px-3 py-2 border border-blue-100">
+              ✨ {c.note}
+            </p>
+          )}
         </div>
 
         {/* Floor plan placeholder + CTA */}
@@ -106,7 +184,9 @@ export default function ConfigTabs({ configs, waFloorPlan, projectName, projectL
           <div className="flex-1 min-h-[140px] bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-dashed border-blue-200 rounded-xl flex flex-col items-center justify-center gap-2 p-4">
             <span className="text-3xl">📐</span>
             <p className="text-sm font-semibold text-[#1a56db]">Floor Plan</p>
-            <p className="text-xs text-[#6b7280] text-center">{c.type} — {c.carpetSqft} sqft carpet</p>
+            <p className="text-xs text-[#6b7280] text-center">
+              {c.type} — {rows[0]?.carpetSqft ? `from ${rows[0].carpetSqft} sqft` : 'carpet area'}
+            </p>
           </div>
           <a
             href={waFloorPlan}
@@ -122,12 +202,6 @@ export default function ConfigTabs({ configs, waFloorPlan, projectName, projectL
         </div>
       </div>
 
-      {c.note && (
-        <p className="mt-4 text-sm text-[#1a56db] bg-blue-50 rounded-lg px-3 py-2 border border-blue-100">
-          ✨ {c.note}
-        </p>
-      )}
-
       {/* ── Pricing modal ──────────────────────────────────────────────────── */}
       {modalOpen && (
         <div
@@ -135,7 +209,6 @@ export default function ConfigTabs({ configs, waFloorPlan, projectName, projectL
           onClick={(e) => e.target === e.currentTarget && setModalOpen(false)}
         >
           <div className="bg-white rounded-2xl w-full max-w-md shadow-2xl p-6">
-            {/* Header */}
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h3 className="text-lg font-extrabold text-[#111827]">
@@ -154,7 +227,6 @@ export default function ConfigTabs({ configs, waFloorPlan, projectName, projectL
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Name */}
               <div>
                 <label className="block text-xs font-semibold text-[#374151] mb-1.5">
                   Your name
@@ -169,7 +241,6 @@ export default function ConfigTabs({ configs, waFloorPlan, projectName, projectL
                 />
               </div>
 
-              {/* Phone */}
               <div>
                 <label className="block text-xs font-semibold text-[#374151] mb-1.5">
                   Phone number
@@ -190,7 +261,6 @@ export default function ConfigTabs({ configs, waFloorPlan, projectName, projectL
                 </div>
               </div>
 
-              {/* Config dropdown */}
               <div>
                 <label className="block text-xs font-semibold text-[#374151] mb-1.5">
                   Configuration interested in
@@ -200,15 +270,22 @@ export default function ConfigTabs({ configs, waFloorPlan, projectName, projectL
                   onChange={(e) => setSelectedConfig(e.target.value)}
                   className="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-[#111827] bg-white focus:outline-none focus:ring-2 focus:ring-[#1a56db] focus:border-transparent"
                 >
-                  {configs.map((cfg) => (
-                    <option key={cfg.type} value={cfg.type}>
-                      {cfg.type} — {cfg.carpetSqft} sqft carpet
-                    </option>
-                  ))}
+                  {configs.map((cfg) => {
+                    const cfgRows =
+                      cfg.variants && cfg.variants.length > 0
+                        ? cfg.variants
+                        : cfg.carpetSqft
+                        ? [{ carpetSqft: cfg.carpetSqft }]
+                        : []
+                    return cfgRows.map((r, i) => (
+                      <option key={`${cfg.type}-${i}`} value={`${cfg.type} ${r.carpetSqft}sqft`}>
+                        {cfg.type} — {r.carpetSqft} sqft carpet
+                      </option>
+                    ))
+                  })}
                 </select>
               </div>
 
-              {/* Submit */}
               <button
                 type="submit"
                 className="w-full flex items-center justify-center gap-2 bg-[#16a34a] hover:bg-green-700 text-white font-bold py-3.5 rounded-xl transition-colors text-sm"

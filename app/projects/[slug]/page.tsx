@@ -362,6 +362,7 @@ export default async function ProjectPage({
                   waFloorPlan={waFloorPlan}
                   projectName={p.name}
                   projectLocality={p.locality}
+                  projectFloors={p.floors}
                 />
             </div>
 
