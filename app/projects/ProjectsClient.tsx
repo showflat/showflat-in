@@ -13,7 +13,6 @@ interface Config {
   priceMax: number
   pricePerSqft: number
   unitsTotal: number
-  unitsAvailable: number
   floors: string
   note?: string
 }
@@ -29,7 +28,6 @@ interface Project {
   possessionDate: string
   configs: Config[]
   totalUnits: number
-  unitsSold: number
   priceRange: { min: number; max: number; displayMin: string; displayMax: string }
   highlights: string[]
   launchDate: string

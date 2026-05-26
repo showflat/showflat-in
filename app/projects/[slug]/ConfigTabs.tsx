@@ -140,18 +140,12 @@ export default function ConfigTabs({
                         </td>
                       )}
                       <td className="px-4 py-3">
-                        {row.priceMin && row.priceMin > 0 ? (
-                          <span className="font-semibold text-[#1a56db]">
-                            {fmtPrice(row.priceMin)}
-                          </span>
-                        ) : (
-                          <button
-                            onClick={() => openModal(row.carpetSqft)}
-                            className="inline-flex items-center gap-1 text-xs font-semibold text-[#1a56db] border border-[#1a56db] px-2.5 py-1 rounded-full hover:bg-blue-50 transition-colors"
-                          >
-                            Contact for pricing →
-                          </button>
-                        )}
+                        <button
+                          onClick={() => openModal(row.carpetSqft)}
+                          className="inline-flex items-center gap-1 text-xs font-semibold text-[#1a56db] border border-[#1a56db] px-2.5 py-1 rounded-full hover:bg-blue-50 transition-colors"
+                        >
+                          Contact for pricing →
+                        </button>
                       </td>
                     </tr>
                   ))}

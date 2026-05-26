@@ -19,8 +19,6 @@ interface Config {
   priceMin: number
   priceMax: number
   pricePerSqft: number
-  unitsTotal: number
-  unitsAvailable: number
   floors: string
   note?: string
 }
@@ -40,7 +38,6 @@ interface Project {
   projectType: string
   configs: Config[]
   totalUnits: number
-  unitsSold: number
   totalArea: string
   floors: number
   priceRange: { min: number; max: number; displayMin: string; displayMax: string }
@@ -179,7 +176,6 @@ export default async function ProjectPage({
   )}`
 
   // Derived values
-  const unitsPct = Math.round((p.unitsSold / p.totalUnits) * 100)
   const carpetMin = Math.min(...p.configs.map((c) => c.carpetSqft))
   const carpetMax = Math.max(...p.configs.map((c) => c.carpetSqft))
   const lowestPricePerSqft = Math.min(...p.configs.map((c) => c.pricePerSqft))
@@ -587,18 +583,6 @@ export default async function ProjectPage({
                 <p className="text-xs text-[#6b7280] mt-1">
                   Starting ₹{lowestPricePerSqft.toLocaleString('en-IN')}/sqft
                 </p>
-              </div>
-
-              {/* Units sold progress bar */}
-              <div>
-                <div className="flex justify-between text-sm mb-2">
-                  <span className="text-[#6b7280]">{p.unitsSold} of {p.totalUnits} units sold</span>
-                  <span className="font-bold text-[#111827]">{unitsPct}%</span>
-                </div>
-                <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-[#1a56db] rounded-full" style={{ width: `${unitsPct}%` }} />
-                </div>
-                <p className="text-xs text-[#6b7280] mt-1.5">{p.totalUnits - p.unitsSold} units remaining</p>
               </div>
 
               {/* Possession date */}
