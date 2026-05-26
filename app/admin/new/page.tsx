@@ -1,13 +1,9 @@
 'use client'
 
-import { useParams } from 'next/navigation'
 import Link from 'next/link'
-import ProjectForm from '../../components/ProjectForm'
+import ProjectForm from '../components/ProjectForm'
 
-export default function EditProjectPage() {
-  const params = useParams()
-  const id = params?.id as string
-
+export default function NewProjectPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white border-b border-gray-100 sticky top-0 z-40">
@@ -17,18 +13,18 @@ export default function EditProjectPage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </Link>
-          <h1 className="font-extrabold text-[#111827] text-sm flex-1">Edit Project</h1>
+          <h1 className="font-extrabold text-[#111827] text-sm flex-1">Add New Project</h1>
           <button
             form="pf"
             type="submit"
             className="bg-[#1a56db] hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2 rounded-xl transition-colors"
           >
-            Save Changes
+            Create Project
           </button>
         </div>
       </header>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8">
-        <ProjectForm projectId={id} />
+        <ProjectForm />
       </div>
     </div>
   )

@@ -1,8 +1,7 @@
-import { readFileSync } from 'fs'
-import { join } from 'path'
 import type { Metadata } from 'next'
 import Navbar from '@/app/components/Navbar'
 import ProjectsClient from './ProjectsClient'
+import { getProjects } from '@/lib/projects'
 
 export const metadata: Metadata = {
   title: 'New Launch Projects in Pune | ShowFlat.in — Zero Brokerage',
@@ -20,9 +19,7 @@ export default async function ProjectsPage({
 }: {
   searchParams: Promise<{ budget?: string }>
 }) {
-  const projects = JSON.parse(
-    readFileSync(join(process.cwd(), 'data/projects.json'), 'utf-8')
-  )
+  const projects = await getProjects()
   const { budget } = await searchParams
 
   return (

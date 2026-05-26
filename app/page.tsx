@@ -1,6 +1,5 @@
-import { readFileSync } from 'fs'
-import { join } from 'path'
 import type { Metadata } from 'next'
+import { getProjects } from '@/lib/projects'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -60,10 +59,10 @@ function WaIcon() {
   )
 }
 
-export default function HomePage() {
-  const projects: Project[] = JSON.parse(
-    readFileSync(join(process.cwd(), 'data/projects.json'), 'utf-8')
-  )
+export default async function HomePage() {
+  const { readFileSync } = await import('fs')
+  const { join } = await import('path')
+  const projects = await getProjects()
   const localities: Locality[] = JSON.parse(
     readFileSync(join(process.cwd(), 'data/localities.json'), 'utf-8')
   )

@@ -1,6 +1,5 @@
-import { readFileSync } from 'fs'
-import { join } from 'path'
 import { notFound } from 'next/navigation'
+import { getProjectBySlug, getAllSlugs, getProjects } from '@/lib/projects'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar, { WA, WaIcon } from '@/app/components/Navbar'
@@ -104,10 +103,6 @@ const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
-function readProjects(): Project[] {
-  return JSON.parse(readFileSync(join(process.cwd(), 'data/projects.json'), 'utf-8'))
-}
-
 function formatPossession(d: string): string {
   const [year, month] = d.split('-')
   return `${MONTHS[+month - 1]} ${year}`
@@ -126,8 +121,9 @@ function calcEMI(principal: number, annualRate: number, tenureYears: number): nu
 
 // ─── Static generation ────────────────────────────────────────────────────────
 
-export function generateStaticParams() {
-  return readProjects().map((p) => ({ slug: p.slug }))
+export async function generateStaticParams() {
+  const slugs = await getAllSlugs()
+  return slugs.map((slug) => ({ slug }))
 }
 
 export async function generateMetadata({
@@ -136,7 +132,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const p = readProjects().find((pr) => pr.slug === slug)
+  const p = await getProjectBySlug(slug)
   if (!p) return { title: 'Project Not Found | ShowFlat.in' }
   return {
     title: `${p.name} by ${p.builder.name} in ${p.locality} Pune | ShowFlat.in`,
@@ -157,9 +153,9 @@ export default async function ProjectPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const allProjects = readProjects()
-  const p = allProjects.find((pr) => pr.slug === slug)
+  const p = await getProjectBySlug(slug) as Project | null
   if (!p) notFound()
+  const allProjects = await getProjects() as Project[]
 
   // WhatsApp links
   const waBook = `${WA}?text=${encodeURIComponent(
